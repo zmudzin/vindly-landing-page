@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy | Vindly</title>
+    <meta name="description" content="Privacy Policy for Vindly by Noiselogic. Learn how Vindly processes data locally and protects user privacy.">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;700&family=Titillium+Web:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight-navy: #0F172A;
+            --velocity-cyan: #00E5FF;
+            --steel-gray: #64748B;
+            --premium-gold: #F59E0B;
+            --white: #FFFFFF;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--midnight-navy);
+            color: var(--white);
+            font-family: 'Titillium Web', sans-serif;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Barlow Condensed', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 0;
+        }
+
+        .hero {
+            padding: 72px 20px 40px;
+            text-align: center;
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('hero shot.png');
+            background-size: cover;
+            background-position: center;
+            border-bottom: 1px solid rgba(100, 116, 139, 0.3);
+        }
+
+        .hero .logo {
+            max-width: 180px;
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            max-width: 780px;
+            margin: 0 auto;
+            color: var(--steel-gray);
+        }
+
+        .content {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px 60px;
+        }
+
+        .meta {
+            color: var(--steel-gray);
+            margin-bottom: 28px;
+            font-size: 0.95rem;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(100, 116, 139, 0.2);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 18px;
+        }
+
+        .section h2 {
+            margin-bottom: 12px;
+        }
+
+        .section ul {
+            margin: 0;
+            padding-left: 22px;
+        }
+
+        .section li + li {
+            margin-top: 8px;
+        }
+
+        .note {
+            color: var(--premium-gold);
+            font-weight: 700;
+        }
+
+        a {
+            color: var(--velocity-cyan);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 30px 20px 40px;
+            color: var(--steel-gray);
+            border-top: 1px solid rgba(100, 116, 139, 0.2);
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 12px;
+            font-family: 'Barlow', sans-serif;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+    <header class="hero">
+        <img src="logo Vindly.png" alt="Vindly Logo" class="logo">
+        <h1>Privacy Policy for Vindly</h1>
+        <p>Transparent disclosure for users and Google Play Console compliance.</p>
+    </header>
+
+    <main class="content">
+        <p class="meta"><strong>Last updated:</strong> April 15, 2026</p>
+
+        <section class="section">
+            <h2>1. Introduction</h2>
+            <p>
+                Vindly ("the App") is developed by Michal Zmudzin, operating under the studio name Noiselogic
+                ("we", "us", or "our"). Vindly is designed as an Augmented Focus Layer for drivers and riders.
+            </p>
+            <p>
+                Our commitment is simple: We do not collect, store, or share your personal data.
+                All processing happens locally on your device to ensure maximum privacy and performance.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>2. Information We Do NOT Collect</h2>
+            <p>Vindly is built on the principle of "Zero Noise". We do not collect:</p>
+            <ul>
+                <li>Personal identification information (name, email, phone number).</li>
+                <li>Location data or GPS coordinates (we display your map, but never record where you are).</li>
+                <li>Contact lists or call logs (we access them locally to display them to you, but never upload them).</li>
+                <li>Message content (Vindly AI processes message summaries locally on your device).</li>
+                <li>Device identifiers or advertising IDs.</li>
+                <li>Usage analytics or behavioral data.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>3. Permissions &amp; API Disclosure (Crucial)</h2>
+
+            <h3>Accessibility Service API</h3>
+            <p>We use the AccessibilityService API exclusively to:</p>
+            <ul>
+                <li>Display the Smart HUD overlay interface over navigation applications (for example Google Maps and Waze).</li>
+                <li>Ensure uninterrupted navigation by detecting app switches and restoring navigation to foreground (Force-Map Return).</li>
+                <li>Enable Stealth Mode by managing the visibility and transparency of interface elements based on user interaction.</li>
+            </ul>
+
+            <p class="note">We do NOT use the AccessibilityService API to:</p>
+            <ul>
+                <li>Read, record, or log any content from other apps.</li>
+                <li>Collect any personal or sensitive user data.</li>
+                <li>Modify system settings without your consent.</li>
+            </ul>
+
+            <h3>Notification Access</h3>
+            <p>
+                Used only to display notification counts and allow you to interact with incoming messages hands-free.
+                Content is processed locally and never transmitted.
+            </p>
+
+            <h3>Bluetooth &amp; NFC</h3>
+            <p>
+                Used to detect when you mount your phone or connect to your vehicle,
+                enabling the Smart Automation feature (auto-launch).
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>4. Data Storage &amp; Security</h2>
+            <p>All app settings, theme preferences (Advanced Lab), and configurations are stored locally on your device.</p>
+            <ul>
+                <li>Data is not backed up to external servers.</li>
+                <li>Data is permanently deleted when you uninstall the App.</li>
+                <li>Since we do not host your data, there is no risk of server-side data breaches.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>5. Third-Party Services</h2>
+            <ul>
+                <li>No Ads: Vindly does not contain advertising SDKs or tracking pixels.</li>
+                <li>
+                    Google Play Billing: We use Google's official system for Premium subscriptions.
+                    We never see or store your credit card or payment details; this is handled entirely by Google.
+                </li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>6. Children's Privacy</h2>
+            <p>
+                Vindly is not directed at children under the age of 13.
+                We do not knowingly collect any information from children.
+            </p>
+        </section>
+
+        <section class="section">
+            <h2>7. Your Rights</h2>
+            <p>You have full control. You can:</p>
+            <ul>
+                <li>Revoke any permission at any time in Android Settings.</li>
+                <li>Clear all local data via Android App Info.</li>
+                <li>Uninstall the app to remove all traces of its configuration.</li>
+            </ul>
+        </section>
+
+        <section class="section">
+            <h2>8. Contact Us</h2>
+            <p>If you have any questions regarding this policy or our Noiselogic privacy standards, please contact us:</p>
+            <ul>
+                <li>Email: <a href="mailto:hello@vindly.app">hello@vindly.app</a></li>
+                <li>Developer: Michal Zmudzin (Noiselogic)</li>
+                <li>Address: Losia 3, 05-805 Otrebusy, Poland</li>
+                <li>Website: <a href="https://noiselogic.io">https://noiselogic.io</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div>NOISELOGIC<span style="color: var(--velocity-cyan);">.IO</span> | Originators of Vindly</div>
+        <a class="back-link" href="index.html">Back to Vindly</a>
+    </footer>
+</body>
+</html>
