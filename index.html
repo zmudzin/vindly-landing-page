@@ -9,8 +9,8 @@
         :root {
             --midnight-navy: #0F172A; /* Tło paneli  */
             --velocity-cyan: #00E5FF; /* Główne akcenty  */
-            --steel-gray: #64748B;    /* Elementy strukturalne [cite: 38] */
-            --premium-gold: #F59E0B;  /* Badge i Premium [cite: 39] */
+            --steel-gray: #64748B;    /* Elementy strukturalne */
+            --premium-gold: #F59E0B;  /* Badge i Premium */
             --white: #FFFFFF;
         }
 
@@ -18,12 +18,12 @@
             margin: 0;
             background-color: var(--midnight-navy);
             color: var(--white);
-            font-family: 'Titillium Web', sans-serif; /* Język inżynieryjny [cite: 45] */
+            font-family: 'Titillium Web', sans-serif; /* Język inżynieryjny */
             line-height: 1.6;
         }
 
         h1, h2, h3 {
-            font-family: 'Barlow Condensed', sans-serif; /* HUD Style [cite: 43] */
+            font-family: 'Barlow Condensed', sans-serif; /* HUD Style */
             text-transform: uppercase;
             letter-spacing: 2px;
         }
@@ -103,7 +103,7 @@
     <section class="hero">
         <img src="logo Vindly.png" alt="Vindly Logo" class="logo">
         <h1>Stop fumbling. Upgrade your ride.</h1>
-        <p style="max-width: 600px;">Vindly transforms your phone into a professional-grade cockpit. Zero noise. Pure focus[cite: 30, 31].</p>
+        <p style="max-width: 600px; color: var(--steel-gray);">Augmented Focus Layer for the modern explorer.</p>
         <a href="TU_WSTAW_LINK_DO_GOOGLE_PLAY" class="btn-play">Get it on Google Play</a>
     </section>
 
@@ -111,7 +111,7 @@
         <div class="screen-container">
             <h3>Normal View</h3>
             <img src="Screenshot_2_normal.png" alt="Vindly Normal Mode">
-            <p>Full control over calls and navigation[cite: 25].</p>
+            <p>Full control over calls and navigation.</p>
         </div>
         <div class="screen-container">
             <h3 class="stealth-label">Stealth Upgrade</h3>
@@ -127,19 +127,32 @@
         </div>
         <div class="feature-item">
             <h3>No "Cage"</h3>
-            <p>Full access to your phone without the restrictions of Android Auto[cite: 3].</p>
+            <p>Full access to your phone without the restrictions of Android Auto.</p>
         </div>
         <div class="feature-item">
             <h3>Privacy First</h3>
-            <p>No data selling. No ads. No bullshit[cite: 30].</p>
+            <p>No data selling. No ads. No bullshit.</p>
         </div>
     </section>
 
     <footer>
-        <p>Vindly uses the AccessibilityService API only for HUD overlay and map focus. No personal data is collected[cite: 1].</p>
-        <div style="margin-top: 20px;">
-            <a href="TU_WSTAW_LINK_POLITYKA" style="color: var(--velocity-cyan);">Privacy Policy</a> | 
-            <a href="TU_WSTAW_LINK_KONTAKT" style="color: var(--velocity-cyan);">Contact</a>
+        <div style="margin-bottom: 30px;">
+            <p style="letter-spacing: 2px; font-size: 0.7rem; color: var(--steel-gray); text-transform: uppercase;">
+                Designed & Engineered by
+            </p>
+            <a href="https://noiselogic.io" style="text-decoration: none; color: var(--white); font-weight: bold; font-size: 1.2rem; letter-spacing: 3px;">
+                NOISELOGIC<span style="color: var(--velocity-cyan);">.IO</span>
+            </a>
+            <p style="font-size: 0.8rem; font-style: italic; margin-top: 5px; color: var(--steel-gray);">Originators of Vindly</p>
+        </div>
+
+        <div style="border-top: 1px solid rgba(100, 116, 139, 0.2); padding-top: 20px;">
+            <p style="font-size: 0.75rem; max-width: 600px; margin: 0 auto 20px;">
+                Vindly uses the AccessibilityService API only for HUD overlay and map focus.
+                No personal data is collected or shared.
+            </p>
+            <a href="mailto:hello@vindly.app" style="color: var(--velocity-cyan); text-decoration: none;">hello@vindly.app</a> |
+            <a href="https://noiselogic.io/privacy" style="color: var(--velocity-cyan); text-decoration: none;">Privacy Policy</a>
         </div>
     </footer>
 
