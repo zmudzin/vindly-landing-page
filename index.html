@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vindly | Augmented Focus Layer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700&family=Barlow:wght@400;700&family=Titillium+Web:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --midnight-navy: #0F172A; /* Tło paneli  */
+            --velocity-cyan: #00E5FF; /* Główne akcenty  */
+            --steel-gray: #64748B;    /* Elementy strukturalne [cite: 38] */
+            --premium-gold: #F59E0B;  /* Badge i Premium [cite: 39] */
+            --white: #FFFFFF;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--midnight-navy);
+            color: var(--white);
+            font-family: 'Titillium Web', sans-serif; /* Język inżynieryjny [cite: 45] */
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Barlow Condensed', sans-serif; /* HUD Style [cite: 43] */
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+
+        /* Sekcja Hero */
+        .hero {
+            height: 80vh;
+            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.8)), url('hero shot.png');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .logo { max-width: 200px; margin-bottom: 30px; }
+
+        .btn-play {
+            background-color: var(--velocity-cyan);
+            color: var(--midnight-navy);
+            padding: 15px 40px;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 4px;
+            font-family: 'Barlow', sans-serif;
+            transition: 0.3s ease;
+        }
+
+        .btn-play:hover { box-shadow: 0 0 15px var(--velocity-cyan); }
+
+        /* Porównanie Normal vs Stealth */
+        .comparison {
+            padding: 80px 10%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            text-align: center;
+        }
+
+        .screen-container img {
+            width: 100%;
+            max-width: 350px;
+            border-radius: 12px;
+            border: 1px solid var(--steel-gray);
+        }
+
+        .stealth-label { color: var(--premium-gold); font-weight: bold; }
+
+        /* Funkcje darmowe */
+        .features {
+            padding: 60px 10%;
+            background: rgba(255, 255, 255, 0.03);
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-item { border-left: 3px solid var(--velocity-cyan); padding-left: 20px; }
+
+        footer {
+            padding: 40px;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--steel-gray);
+        }
+
+        @media (max-width: 768px) {
+            .comparison { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <img src="logo Vindly.png" alt="Vindly Logo" class="logo">
+        <h1>Stop fumbling. Upgrade your ride.</h1>
+        <p style="max-width: 600px;">Vindly transforms your phone into a professional-grade cockpit. Zero noise. Pure focus[cite: 30, 31].</p>
+        <a href="TU_WSTAW_LINK_DO_GOOGLE_PLAY" class="btn-play">Get it on Google Play</a>
+    </section>
+
+    <section class="comparison">
+        <div class="screen-container">
+            <h3>Normal View</h3>
+            <img src="Screenshot_2_normal.png" alt="Vindly Normal Mode">
+            <p>Full control over calls and navigation[cite: 25].</p>
+        </div>
+        <div class="screen-container">
+            <h3 class="stealth-label">Stealth Upgrade</h3>
+            <img src="Screenshot_1_stealth.png" alt="Vindly Stealth Mode">
+            <p>Icons "breathe" back to life only when needed.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <h3>Glove-Friendly</h3>
+            <p>Oversized controls designed for motorcycle gloves and vibrations.</p>
+        </div>
+        <div class="feature-item">
+            <h3>No "Cage"</h3>
+            <p>Full access to your phone without the restrictions of Android Auto[cite: 3].</p>
+        </div>
+        <div class="feature-item">
+            <h3>Privacy First</h3>
+            <p>No data selling. No ads. No bullshit[cite: 30].</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>Vindly uses the AccessibilityService API only for HUD overlay and map focus. No personal data is collected[cite: 1].</p>
+        <div style="margin-top: 20px;">
+            <a href="TU_WSTAW_LINK_POLITYKA" style="color: var(--velocity-cyan);">Privacy Policy</a> | 
+            <a href="TU_WSTAW_LINK_KONTAKT" style="color: var(--velocity-cyan);">Contact</a>
+        </div>
+    </footer>
+
+</body>
+</html>
