@@ -56,6 +56,24 @@
         </div>
     </section>
 
+    <section class="field-proof-section" aria-label="Kontekst operacyjny Vindly na motocyklu">
+        <h3 class="field-proof-title">Kontekst operacyjny: Triumph Bonneville</h3>
+        <figure class="field-proof-image-wrapper" data-lightbox-trigger>
+            <img
+                src="../vindly-triumph-field-proof.webp"
+                alt="Vindly HUD na motocyklu Triumph Bonneville."
+                width="2200"
+                height="1466"
+                loading="lazy"
+                decoding="async"
+            >
+        </figure>
+        <p class="technical-caption">
+            Vindly jako aktywna warstwa HUD (Faza A). Integracja z analogowymi przyrządami pokładowymi.
+            Interfejs utrzymuje wysoką czytelność przy minimalnym obciążeniu percepcji kierowcy.
+        </p>
+    </section>
+
     <section class="features">
         <div class="feature-item">
             <h3>Rękawiczki</h3>
@@ -98,6 +116,11 @@
         </div>
     </footer>
 
+    <div class="lightbox" id="field-proof-lightbox" aria-hidden="true" role="dialog" aria-label="Podgląd zdjęcia">
+        <button class="lightbox-close" type="button" aria-label="Zamknij podgląd">&times;</button>
+        <img src="../vindly-triumph-field-proof.webp" alt="Powiększenie: Vindly HUD na motocyklu Triumph Bonneville.">
+    </div>
+
     <script>
         (function () {
             var v = document.querySelector(".hero-demo-video");
@@ -110,6 +133,34 @@
             else v.addEventListener("canplay", tryPlay, { once: true });
             v.addEventListener("click", function () {
                 if (v.paused) tryPlay();
+            });
+        })();
+
+        (function () {
+            var trigger = document.querySelector("[data-lightbox-trigger]");
+            var lightbox = document.getElementById("field-proof-lightbox");
+            if (!trigger || !lightbox) return;
+            var closeBtn = lightbox.querySelector(".lightbox-close");
+
+            function closeLightbox() {
+                lightbox.classList.remove("is-open");
+                lightbox.setAttribute("aria-hidden", "true");
+                document.body.classList.remove("lightbox-open");
+            }
+
+            function openLightbox() {
+                lightbox.classList.add("is-open");
+                lightbox.setAttribute("aria-hidden", "false");
+                document.body.classList.add("lightbox-open");
+            }
+
+            trigger.addEventListener("click", openLightbox);
+            closeBtn.addEventListener("click", closeLightbox);
+            lightbox.addEventListener("click", function (event) {
+                if (event.target === lightbox) closeLightbox();
+            });
+            document.addEventListener("keydown", function (event) {
+                if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
             });
         })();
     </script>
