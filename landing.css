@@ -55,6 +55,7 @@ h1, h2, h3 {
     display: block;
     max-width: 132px;
     width: 40%;
+    height: auto;
     margin: 0 0 22px;
     opacity: 0.92;
 }
