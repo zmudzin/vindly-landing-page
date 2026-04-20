@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vindly | Augmented Focus Layer</title>
+    <link rel="canonical" href="https://vindly.app/en/">
+    <link rel="alternate" hreflang="pl" href="https://vindly.app/pl/">
+    <link rel="alternate" hreflang="en" href="https://vindly.app/en/">
+    <link rel="alternate" hreflang="x-default" href="https://vindly.app/pl/">
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../landing.css">
+</head>
+<body>
+
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-copy">
+                <img src="../logo Vindly.png" alt="Vindly" class="hero-logo" width="200" height="60">
+                <h1 class="hero-title">Vindly: Augmented Focus Layer</h1>
+                <p class="hero-lead">Less visual noise. Your attention, protected.</p>
+                <a href="https://play.google.com/apps/testing/io.noiselogic.vindly" class="btn-play">Google Play</a>
+            </div>
+            <div class="hero-visual">
+                <div class="hero-media">
+                    <div class="hero-media-clip">
+                        <video
+                            class="hero-demo-video"
+                            autoplay
+                            muted
+                            loop
+                            playsinline
+                            preload="auto"
+                            poster="../prefers-reduced-motion.png"
+                            aria-label="Vindly navigation in Stealth Mode"
+                        >
+                            <source src="../screen 2 upgrade (1141 x 2340 px).webm" type="video/webm">
+                            <source src="../screen 2 upgrade (1141 x 2340 px).mp4" type="video/mp4">
+                        </video>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="comparison">
+        <div class="screen-slot">
+            <h3>Standard view</h3>
+            <img src="../screen 1 (1141 x 2340 px).png" alt="Vindly — standard view">
+            <p>Full control: calls and navigation without compromise.</p>
+        </div>
+        <div class="screen-slot">
+            <h3 class="badge-gold">Stealth Mode</h3>
+            <img src="../prefers-reduced-motion.png" alt="Vindly — Messages icon in Stealth Mode (still frame)">
+            <p>In Stealth Mode, icons return to the foreground only when something needs your attention.</p>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="feature-item">
+            <h3>Glove-friendly</h3>
+            <p>Large touch targets for gloves and motorcycle vibration.</p>
+        </div>
+        <div class="feature-item">
+            <h3>No “cage”</h3>
+            <p>Full phone access — not locked into Android Auto–style limits.</p>
+        </div>
+        <div class="feature-item">
+            <h3>Privacy</h3>
+            <p>No data selling. No ads.</p>
+        </div>
+    </section>
+
+    <footer>
+        <nav class="lang-nav" aria-label="Choose language">
+            <ul>
+                <li><a href="../pl/" hreflang="pl" lang="pl">Polski</a></li>
+                <li><a href="./" hreflang="en" lang="en" aria-current="page">English</a></li>
+            </ul>
+        </nav>
+        <div class="credits-block">
+            <p class="credits-kicker">Designed &amp; Engineered by</p>
+            <a href="https://noiselogic.io" class="noiselogic-brand" aria-label="Visit NoiseLogic website">
+                <img src="../logo NoiseLogic.png" alt="NoiseLogic" class="noiselogic-logo" width="110" height="40">
+                <span class="noiselogic-wordmark">NOISELOGIC<span style="color: var(--velocity-cyan);">.IO</span></span>
+            </a>
+            <p class="credits-origin">Originators of Vindly</p>
+        </div>
+
+        <div class="footer-rule">
+            <p class="footer-note">
+                Vindly uses the AccessibilityService API only for HUD overlay and map focus.
+                No personal data is collected or shared.
+            </p>
+            <a href="mailto:hello@vindly.app" class="link-cyan">hello@vindly.app</a>
+            &nbsp;|&nbsp;
+            <a href="../privacy-policy.html" class="link-cyan">Privacy Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            var v = document.querySelector(".hero-demo-video");
+            if (!v) return;
+            function tryPlay() {
+                var p = v.play();
+                if (p && typeof p.then === "function") p.catch(function () {});
+            }
+            if (v.readyState >= 2) tryPlay();
+            else v.addEventListener("canplay", tryPlay, { once: true });
+            v.addEventListener("click", function () {
+                if (v.paused) tryPlay();
+            });
+        })();
+    </script>
+
+</body>
+</html>
