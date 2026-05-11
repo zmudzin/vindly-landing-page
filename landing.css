@@ -164,10 +164,10 @@ h1, h2, h3 {
     text-decoration: none;
     border-radius: 2px;
     width: fit-content;
-    transition: box-shadow 0.25s ease, transform 0.2s ease;
+    transition: box-shadow 0.3s ease, transform 0.2s ease, opacity 0.3s ease;
 }
 
-.btn-play:hover {
+.btn-play:hover:not(.disabled) {
     box-shadow: 0 0 22px rgba(0, 229, 255, 0.55);
     transform: translateY(-1px);
 }
@@ -175,14 +175,19 @@ h1, h2, h3 {
 .btn-play.disabled,
 a.btn-play.disabled {
     opacity: 0.6;
-    pointer-events: none;
     cursor: not-allowed;
+    transform: none;
+    transition: box-shadow 0.35s ease, opacity 0.35s ease;
 }
 
 .btn-play.disabled:hover,
 a.btn-play.disabled:hover {
-    box-shadow: none;
+    opacity: 1;
     transform: none;
+    box-shadow:
+        0 0 0 1px rgba(0, 229, 255, 0.35),
+        0 0 24px rgba(0, 229, 255, 0.45),
+        0 0 48px rgba(0, 229, 255, 0.2);
 }
 
 .hero-visual {
