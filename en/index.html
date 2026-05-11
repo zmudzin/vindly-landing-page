@@ -3,12 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vindly | Augmented Focus Layer</title>
+    <title>Vindly | Focus layer on your phone</title>
+    <meta name="description" content="Vindly cuts distraction while navigating: Stealth Mode, on-screen HUD, local processing. Paid anti-noise filter for drivers.">
     <link rel="canonical" href="https://vindly.app/en/">
     <link rel="alternate" hreflang="pl" href="https://vindly.app/pl/">
     <link rel="alternate" hreflang="en" href="https://vindly.app/en/">
     <link rel="alternate" hreflang="x-default" href="https://vindly.app/pl/">
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;700&family=Titillium+Web:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Vindly">
+    <meta property="og:title" content="Vindly — regain attention behind the wheel">
+    <meta property="og:description" content="Stealth Mode and HUD without excess noise. Local signal processing.">
+    <meta property="og:url" content="https://vindly.app/en/">
+    <meta property="og:image" content="https://vindly.app/og-vindly.jpg">
+    <meta property="og:locale" content="en_US">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Vindly — regain attention behind the wheel">
+    <meta name="twitter:description" content="Stealth Mode and HUD. Local processing.">
+    <meta name="twitter:image" content="https://vindly.app/og-vindly.jpg">
+
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Barlow:wght@400;700&family=Roboto:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../landing.css">
 </head>
 <body>
@@ -16,10 +31,13 @@
     <section class="hero">
         <div class="hero-inner">
             <div class="hero-copy">
-                <img src="../vindlyLogo.png" alt="Vindly" class="hero-logo" width="200" height="149">
-                <h1 class="hero-title">Vindly: Augmented Focus Layer</h1>
+                <img src="../logo-vindly.png" alt="Vindly" class="hero-logo" width="200" height="149">
+                <h1 class="hero-title">
+                    <span class="hero-title-primary" lang="en">Regain control over your attention behind the wheel</span>
+                    <span class="hero-title-tagline" lang="en">Vindly: Augmented Focus Layer</span>
+                </h1>
                 <p class="hero-lead">Less visual noise. Your attention, protected.</p>
-                <a href="https://play.google.com/apps/testing/io.noiselogic.vindly" class="btn-play">Google Play</a>
+                <a class="btn-play disabled">Coming soon on Google Play</a>
             </div>
             <div class="hero-visual">
                 <div class="hero-media">
@@ -70,22 +88,36 @@
         </figure>
         <p class="technical-caption">
             Vindly as an active HUD layer. Integration with analog onboard gauges.
-            The interface maintains high readability with minimal driver perceptual load.
+            The interface maintains high readability with minimal rider perceptual load.
         </p>
     </section>
 
     <section class="features">
         <div class="feature-item">
-            <h3>Glove-friendly</h3>
-            <p>Large touch targets for gloves and motorcycle vibration.</p>
-        </div>
-        <div class="feature-item">
             <h3>No “cage”</h3>
-            <p>Full phone access — not locked into Android Auto–style limits.</p>
+            <p>Full access to the phone — without the limits typical of built-in automotive stacks.</p>
         </div>
         <div class="feature-item">
             <h3>Privacy</h3>
-            <p>No data selling. No ads.</p>
+            <p>No sale of your data and no ads. No identity-linked telemetry leaves the device.</p>
+        </div>
+        <div class="feature-item feature-item-lab">
+            <h3>Advanced Lab <span lang="en">(DPN-1)</span></h3>
+            <p>The default interface is a sterile <span lang="en">Quiet Tech</span> aesthetic. Full autonomy over color and motion rules, plus voice interaction priority (<span lang="en">DPN-1</span>), require paid access to the <span lang="en">Advanced Lab</span> module.</p>
+        </div>
+    </section>
+
+    <section class="compliance-shield" aria-labelledby="compliance-shield-heading">
+        <div class="compliance-shield-inner">
+            <h2 id="compliance-shield-heading" class="compliance-shield-title">System infrastructure and permissions</h2>
+            <div class="compliance-shield-body">
+                <p>
+                    <strong>AccessibilityService</strong> and <strong>NotificationListenerService</strong> are a hard technical requirement. They are strictly necessary to render <span lang="en">Smart HUD</span> instruments, operate <span lang="en">Stealth Mode</span>, and enforce navigation priority over other windows.
+                </p>
+                <p>
+                    The architecture relies on local in-memory signal processing. Vindly is a legal shield — we do not aggregate notifications for marketing purposes.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -99,17 +131,13 @@
         <div class="credits-block">
             <p class="credits-kicker">Designed &amp; Engineered by</p>
             <a href="https://noiselogic.io" class="noiselogic-brand" aria-label="Visit NoiseLogic website">
-                <img src="../logo NoiseLogic.png" alt="NoiseLogic" class="noiselogic-logo" width="110" height="40">
+                <img src="../logo-noiselogic.png" alt="NoiseLogic" class="noiselogic-logo" width="110" height="40">
                 <span class="noiselogic-wordmark">NOISELOGIC<span style="color: var(--velocity-cyan);">.IO</span></span>
             </a>
             <p class="credits-origin">Originators of Vindly</p>
         </div>
 
         <div class="footer-rule">
-            <p class="footer-note">
-                Vindly uses the AccessibilityService API only for HUD overlay and map focus.
-                No personal data is collected or shared.
-            </p>
             <a href="mailto:hello@vindly.app" class="link-cyan">hello@vindly.app</a>
             &nbsp;|&nbsp;
             <a href="../privacy-policy.html" class="link-cyan">Privacy Policy</a>

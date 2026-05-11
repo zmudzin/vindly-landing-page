@@ -16,7 +16,7 @@ body {
     margin: 0;
     background-color: var(--midnight-navy);
     color: var(--white);
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-weight: 400;
     line-height: 1.55;
 }
@@ -64,6 +64,17 @@ h1, h2, h3 {
     margin: 0 0 18px;
     font-size: clamp(1.65rem, 2.8vw + 0.6rem, 2.85rem);
     letter-spacing: 0.16em;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.55rem;
+}
+
+.hero-title-tagline {
+    font-size: clamp(0.95rem, 1.1vw + 0.4rem, 1.15rem);
+    letter-spacing: 0.12em;
+    text-transform: none;
+    opacity: 0.92;
 }
 
 .hero-lead {
@@ -92,6 +103,19 @@ h1, h2, h3 {
 .btn-play:hover {
     box-shadow: 0 0 22px rgba(0, 229, 255, 0.55);
     transform: translateY(-1px);
+}
+
+.btn-play.disabled,
+a.btn-play.disabled {
+    opacity: 0.55;
+    pointer-events: none;
+    cursor: default;
+}
+
+.btn-play.disabled:hover,
+a.btn-play.disabled:hover {
+    box-shadow: none;
+    transform: none;
 }
 
 .hero-visual {
@@ -301,6 +325,35 @@ body.lightbox-open {
     font-size: 0.92rem;
 }
 
+.compliance-shield {
+    background-color: var(--midnight-navy);
+    border-top: 1px solid rgba(100, 116, 139, 0.14);
+    padding: clamp(36px, 5vw, 56px) clamp(22px, 6%, 72px);
+}
+
+.compliance-shield-inner {
+    max-width: 72ch;
+    margin: 0 auto;
+}
+
+.compliance-shield-title {
+    margin: 0 0 clamp(14px, 2vw, 18px);
+    font-size: clamp(0.95rem, 1.15vw, 1.08rem);
+    letter-spacing: 0.14em;
+    text-align: center;
+}
+
+.compliance-shield-body p {
+    margin: 0 0 1rem;
+    color: var(--steel-gray);
+    font-size: 0.92rem;
+    line-height: 1.6;
+}
+
+.compliance-shield-body p:last-child {
+    margin-bottom: 0;
+}
+
 footer {
     padding: 40px clamp(20px, 4vw, 40px) 48px;
     text-align: center;
@@ -314,7 +367,7 @@ footer {
 .lang-nav {
     margin: 0 0 22px;
     font-size: 0.8rem;
-    font-family: 'Titillium Web', sans-serif;
+    font-family: 'Roboto', sans-serif;
     text-transform: none;
     letter-spacing: 0.02em;
 }
@@ -443,6 +496,10 @@ footer {
     .hero-lead {
         margin-left: auto;
         margin-right: auto;
+    }
+
+    .hero-title {
+        align-items: center;
     }
 
     .comparison {
