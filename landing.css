@@ -61,20 +61,27 @@ h1, h2, h3 {
 }
 
 .hero-title {
-    margin: 0 0 18px;
-    font-size: clamp(1.65rem, 2.8vw + 0.6rem, 2.85rem);
-    letter-spacing: 0.16em;
     display: flex;
     flex-direction: column;
+    gap: 0.5rem; /* Separacja biologiczna bodźców */
+    line-height: 1.1;
+    margin: 0 0 18px;
     align-items: flex-start;
-    gap: 0.55rem;
+    font-size: unset;
+    letter-spacing: unset;
+}
+
+.hero-title-primary {
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    /* Zostaje potężne i czytelne */
 }
 
 .hero-title-tagline {
-    font-size: clamp(0.95rem, 1.1vw + 0.4rem, 1.15rem);
-    letter-spacing: 0.12em;
+    font-size: clamp(1.2rem, 3vw, 1.8rem);
+    color: var(--velocity-cyan); /* Lub inny akcent z Konstytucji, np. Muted */
+    font-weight: 400;
+    letter-spacing: 2px;
     text-transform: none;
-    opacity: 0.92;
 }
 
 .hero-lead {
