@@ -73,22 +73,32 @@
         </div>
     </section>
 
-    <section class="field-proof-section" aria-label="Vindly operational context on motorcycle cockpit">
-        <h3 class="field-proof-title">Operational context: Triumph Bonneville</h3>
-        <figure class="field-proof-image-wrapper" data-lightbox-trigger>
-            <img
-                src="../vindly-triumph-field-proof.webp"
-                alt="Vindly HUD on a Triumph Bonneville motorcycle."
-                width="2200"
-                height="1466"
-                loading="lazy"
-                decoding="async"
-            >
-        </figure>
-        <p class="technical-caption">
-            Vindly as an active HUD layer. Integration with analog onboard gauges.
-            The interface maintains high readability with minimal rider perceptual load.
-        </p>
+    <section id="field-proof" class="field-proof" aria-labelledby="proof-heading">
+        <div class="container">
+            <h2 id="proof-heading" class="compliance-shield-title">OPERATIONAL CONTEXT</h2>
+
+            <div class="proof-tabs-nav" role="tablist" aria-label="Choose operational environment">
+                <button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-moto" id="tab-moto" tabindex="0">MOTO</button>
+                <span class="tab-divider" aria-hidden="true">|</span>
+                <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-auto" id="tab-auto" tabindex="-1">AUTO</button>
+            </div>
+
+            <div class="proof-tabs-content">
+                <div class="tab-panel active" id="panel-moto" role="tabpanel" aria-labelledby="tab-moto">
+                    <button type="button" class="lightbox-trigger" aria-label="Enlarge motorcycle photo" data-lightbox-trigger>
+                        <img src="../proof-moto.webp" alt="Vindly mounted on a Triumph Bonneville T120 in the rain" class="proof-image" width="2200" height="1467" loading="lazy" decoding="async">
+                    </button>
+                    <p class="proof-caption">Vibration and moisture resistance testing on the iconic <span lang="en">Triumph Bonneville T120</span>.</p>
+                </div>
+
+                <div class="tab-panel" id="panel-auto" role="tabpanel" aria-labelledby="tab-auto" hidden>
+                    <button type="button" class="lightbox-trigger" aria-label="Enlarge car interior photo" data-lightbox-trigger>
+                        <img src="../proof-auto.webp" alt="Cognitive Silence in a dark car cockpit during night driving" class="proof-image" width="2200" height="1467" loading="lazy" decoding="async">
+                    </button>
+                    <p class="proof-caption">Attention protection and a sterile cockpit during night navigation.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="features">
@@ -143,54 +153,12 @@
         </div>
     </footer>
 
-    <div class="lightbox" id="field-proof-lightbox" aria-hidden="true" role="dialog" aria-label="Image preview">
-        <button class="lightbox-close" type="button" aria-label="Close preview">&times;</button>
-        <img src="../vindly-triumph-field-proof.webp" alt="Zoomed view: Vindly HUD on a Triumph Bonneville motorcycle.">
+    <div id="field-proof-lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Enlarged image">
+        <button class="lightbox-close" type="button" aria-label="Close enlargement">&times;</button>
+        <img src="" alt="" class="lightbox-target-image" width="2200" height="1467">
     </div>
 
-    <script>
-        (function () {
-            var v = document.querySelector(".hero-demo-video");
-            if (!v) return;
-            function tryPlay() {
-                var p = v.play();
-                if (p && typeof p.then === "function") p.catch(function () {});
-            }
-            if (v.readyState >= 2) tryPlay();
-            else v.addEventListener("canplay", tryPlay, { once: true });
-            v.addEventListener("click", function () {
-                if (v.paused) tryPlay();
-            });
-        })();
-
-        (function () {
-            var trigger = document.querySelector("[data-lightbox-trigger]");
-            var lightbox = document.getElementById("field-proof-lightbox");
-            if (!trigger || !lightbox) return;
-            var closeBtn = lightbox.querySelector(".lightbox-close");
-
-            function closeLightbox() {
-                lightbox.classList.remove("is-open");
-                lightbox.setAttribute("aria-hidden", "true");
-                document.body.classList.remove("lightbox-open");
-            }
-
-            function openLightbox() {
-                lightbox.classList.add("is-open");
-                lightbox.setAttribute("aria-hidden", "false");
-                document.body.classList.add("lightbox-open");
-            }
-
-            trigger.addEventListener("click", openLightbox);
-            closeBtn.addEventListener("click", closeLightbox);
-            lightbox.addEventListener("click", function (event) {
-                if (event.target === lightbox) closeLightbox();
-            });
-            document.addEventListener("keydown", function (event) {
-                if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
-            });
-        })();
-    </script>
+    <script src="../core.js" defer></script>
 
 </body>
 </html>

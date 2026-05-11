@@ -74,22 +74,32 @@
         </div>
     </section>
 
-    <section class="field-proof-section" aria-label="Kontekst operacyjny Vindly na motocyklu">
-        <h3 class="field-proof-title">Kontekst operacyjny: Triumph Bonneville</h3>
-        <figure class="field-proof-image-wrapper" data-lightbox-trigger>
-            <img
-                src="../vindly-triumph-field-proof.webp"
-                alt="Vindly HUD na motocyklu Triumph Bonneville."
-                width="2200"
-                height="1466"
-                loading="lazy"
-                decoding="async"
-            >
-        </figure>
-        <p class="technical-caption">
-            Vindly jako aktywna warstwa HUD. Integracja z analogowymi przyrządami pokładowymi.
-            Interfejs utrzymuje wysoką czytelność przy minimalnym obciążeniu percepcji kierowcy.
-        </p>
+    <section id="field-proof" class="field-proof" aria-labelledby="proof-heading">
+        <div class="container">
+            <h2 id="proof-heading" class="compliance-shield-title">KONTEKST OPERACYJNY</h2>
+
+            <div class="proof-tabs-nav" role="tablist" aria-label="Wybierz środowisko operacyjne">
+                <button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-moto" id="tab-moto" tabindex="0">MOTO</button>
+                <span class="tab-divider" aria-hidden="true">|</span>
+                <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-auto" id="tab-auto" tabindex="-1">AUTO</button>
+            </div>
+
+            <div class="proof-tabs-content">
+                <div class="tab-panel active" id="panel-moto" role="tabpanel" aria-labelledby="tab-moto">
+                    <button type="button" class="lightbox-trigger" aria-label="Powiększ zdjęcie z motocyklem" data-lightbox-trigger>
+                        <img src="../proof-moto.webp" alt="Vindly w uchwycie na Triumph Bonneville T120 w deszczu" class="proof-image" width="2200" height="1467" loading="lazy" decoding="async">
+                    </button>
+                    <p class="proof-caption">Test wibracji i odporności na wilgoć na kultowym <span lang="en">Triumph Bonneville T120</span>.</p>
+                </div>
+
+                <div class="tab-panel" id="panel-auto" role="tabpanel" aria-labelledby="tab-auto" hidden>
+                    <button type="button" class="lightbox-trigger" aria-label="Powiększ zdjęcie z autem" data-lightbox-trigger>
+                        <img src="../proof-auto.webp" alt="Cisza Poznawcza w mrocznym kokpicie auta podczas nocnej jazdy" class="proof-image" width="2200" height="1467" loading="lazy" decoding="async">
+                    </button>
+                    <p class="proof-caption">Ochrona uwagi i sterylny kokpit podczas nocnej nawigacji.</p>
+                </div>
+            </div>
+        </div>
     </section>
 
     <section class="features">
@@ -144,54 +154,12 @@
         </div>
     </footer>
 
-    <div class="lightbox" id="field-proof-lightbox" aria-hidden="true" role="dialog" aria-label="Podgląd zdjęcia">
-        <button class="lightbox-close" type="button" aria-label="Zamknij podgląd">&times;</button>
-        <img src="../vindly-triumph-field-proof.webp" alt="Powiększenie: Vindly HUD na motocyklu Triumph Bonneville.">
+    <div id="field-proof-lightbox" class="lightbox" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Powiększone zdjęcie">
+        <button class="lightbox-close" type="button" aria-label="Zamknij powiększenie">&times;</button>
+        <img src="" alt="" class="lightbox-target-image" width="2200" height="1467">
     </div>
 
-    <script>
-        (function () {
-            var v = document.querySelector(".hero-demo-video");
-            if (!v) return;
-            function tryPlay() {
-                var p = v.play();
-                if (p && typeof p.then === "function") p.catch(function () {});
-            }
-            if (v.readyState >= 2) tryPlay();
-            else v.addEventListener("canplay", tryPlay, { once: true });
-            v.addEventListener("click", function () {
-                if (v.paused) tryPlay();
-            });
-        })();
-
-        (function () {
-            var trigger = document.querySelector("[data-lightbox-trigger]");
-            var lightbox = document.getElementById("field-proof-lightbox");
-            if (!trigger || !lightbox) return;
-            var closeBtn = lightbox.querySelector(".lightbox-close");
-
-            function closeLightbox() {
-                lightbox.classList.remove("is-open");
-                lightbox.setAttribute("aria-hidden", "true");
-                document.body.classList.remove("lightbox-open");
-            }
-
-            function openLightbox() {
-                lightbox.classList.add("is-open");
-                lightbox.setAttribute("aria-hidden", "false");
-                document.body.classList.add("lightbox-open");
-            }
-
-            trigger.addEventListener("click", openLightbox);
-            closeBtn.addEventListener("click", closeLightbox);
-            lightbox.addEventListener("click", function (event) {
-                if (event.target === lightbox) closeLightbox();
-            });
-            document.addEventListener("keydown", function (event) {
-                if (event.key === "Escape" && lightbox.classList.contains("is-open")) closeLightbox();
-            });
-        })();
-    </script>
+    <script src="../core.js" defer></script>
 
 </body>
 </html>
