@@ -343,14 +343,18 @@ a.btn-play.disabled:hover {
 }
 
 .lightbox-trigger {
+    position: relative;
     background: transparent;
-    border: none;
+    border: 1px solid rgba(0, 229, 255, 0.1);
     padding: 0;
     cursor: zoom-in;
-    width: 100%;
+    width: min(100%, 720px);
     max-width: 720px;
     margin: 0 auto;
     display: block;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    border-radius: 8px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -360,12 +364,15 @@ a.btn-play.disabled:hover {
 }
 
 .proof-image {
+    position: absolute;
+    inset: 0;
     width: 100%;
-    aspect-ratio: 3 / 2;
+    height: 100%;
     object-fit: cover;
-    border-radius: 8px;
-    border: 1px solid rgba(0, 229, 255, 0.1);
+    object-position: center;
     display: block;
+    border: none;
+    border-radius: 0;
 }
 
 .proof-caption {

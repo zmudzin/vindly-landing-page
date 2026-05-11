@@ -2,44 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vindly</title>
-    <link rel="alternate" hreflang="pl" href="https://vindly.app/pl/">
-    <link rel="alternate" hreflang="en" href="https://vindly.app/en/">
-    <link rel="alternate" hreflang="x-default" href="https://vindly.app/pl/">
-    <link rel="canonical" href="https://vindly.app/pl/">
-    <style>
-        @font-face {
-            font-family: 'Inter';
-            src: url('Inter_18pt-Regular.ttf') format('truetype');
-            font-weight: 400;
-            font-style: normal;
-            font-display: swap;
-        }
-        @font-face {
-            font-family: 'Inter';
-            src: url('Inter_18pt-Bold.ttf') format('truetype');
-            font-weight: 700;
-            font-style: normal;
-            font-display: swap;
-        }
-    </style>
     <script>
-        (function () {
-            var list = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || ""];
-            var pl = list.some(function (s) {
-                return String(s).toLowerCase().indexOf("pl") === 0;
-            });
-            location.replace(pl ? "pl/" : "en/");
-        })();
+        // Sprawdzamy język przeglądarki. Jeśli zaczyna się od 'pl', rzucamy do Polski. W przeciwnym razie global (EN).
+        var userLang = navigator.language || navigator.userLanguage || "";
+        if (userLang.toLowerCase().indexOf('pl') === 0) {
+            window.location.replace("/pl/");
+        } else {
+            window.location.replace("/en/");
+        }
     </script>
-    <meta http-equiv="refresh" content="0; url=pl/">
 </head>
-<body style="margin:0;min-height:100vh;display:flex;align-items:center;justify-content:center;background:#0F172A;color:#94a3b8;font-family:Inter,system-ui,sans-serif;text-align:center;padding:1.5rem">
-    <p style="margin:0;font-size:0.95rem;line-height:1.6">
-        <a href="pl/" hreflang="pl" lang="pl" style="color:#00E5FF;text-decoration:none">Polski</a>
-        &nbsp;·&nbsp;
-        <a href="en/" hreflang="en" lang="en" style="color:#00E5FF;text-decoration:none">English</a>
-    </p>
+<body>
+    <p>Redirecting to <a href="/en/">Vindly International</a> or <a href="/pl/">Vindly Polska</a>...</p>
 </body>
 </html>
