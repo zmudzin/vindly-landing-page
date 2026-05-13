@@ -36,8 +36,13 @@
                     <span class="hero-title-tagline" lang="en">VINDLY: AUGMENTED FOCUS LAYER</span>
                 </h1>
                 <p class="hero-lead">Zaprojektowany, by izolować cyfrowy chaos. Sterylny kokpit i pełna ochrona Twojej percepcji.</p>
-                <!-- Martwy przycisk, bez linku, zablokowany wizualnie w CSS -->
-                <a class="btn-play disabled">Wkrótce w Google Play</a>
+                <form id="prelaunch-form" class="waitlist-form">
+                    <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only">
+                    <div class="form-group">
+                        <input type="email" id="waitlist-email" required placeholder="Twój adres email" aria-label="Adres email">
+                        <button type="submit" id="waitlist-submit" aria-live="polite">Powiadom mnie</button>
+                    </div>
+                </form>
             </div>
             <div class="hero-visual">
                 <div class="hero-media">

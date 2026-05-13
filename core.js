@@ -83,6 +83,68 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    var form = document.getElementById("prelaunch-form");
+    var submitBtn = document.getElementById("waitlist-submit");
+    var emailInput = document.getElementById("waitlist-email");
+    var isPl = document.documentElement.lang.toLowerCase().indexOf("pl") === 0;
+
+    function formSuccessState() {
+        if (!submitBtn || !emailInput) return;
+        submitBtn.textContent = isPl ? "Zabezpieczono" : "Secured";
+        submitBtn.style.backgroundColor = "#00E5FF";
+        submitBtn.style.color = "#0F172A";
+        emailInput.value = "";
+        emailInput.placeholder = isPl ? "Oczekuj sygnału." : "Awaiting signal.";
+    }
+
+    window.ml_webform_success_187353900174541990 = function () {
+        formSuccessState();
+    };
+
+    if (form && submitBtn && emailInput) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+
+            var gotcha = form.querySelector('[name="_gotcha"]');
+            if (gotcha && gotcha.value) {
+                formSuccessState();
+                return;
+            }
+
+            var email = emailInput.value.trim();
+            if (!email) return;
+
+            submitBtn.disabled = true;
+            emailInput.disabled = true;
+            submitBtn.textContent = isPl ? "Autoryzacja..." : "Authorizing...";
+
+            var mlUrl =
+                "https://assets.mailerlite.com/jsonp/2344423/forms/187353900174541990/subscribe?fields%5Bemail%5D=" +
+                encodeURIComponent(email) +
+                "&_=" +
+                new Date().getTime();
+            var script = document.createElement("script");
+            script.src = mlUrl;
+            script.async = true;
+
+            script.onload = function () {
+                if (script.parentNode) {
+                    script.parentNode.removeChild(script);
+                }
+            };
+            script.onerror = function () {
+                if (script.parentNode) {
+                    script.parentNode.removeChild(script);
+                }
+                submitBtn.disabled = false;
+                emailInput.disabled = false;
+                submitBtn.textContent = isPl ? "Błąd. Ponów." : "Error. Retry.";
+            };
+
+            document.head.appendChild(script);
+        });
+    }
+
     var lightbox = document.getElementById("field-proof-lightbox");
     if (!lightbox) return;
     var lightboxImg = lightbox.querySelector(".lightbox-target-image");
