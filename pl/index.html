@@ -63,19 +63,21 @@
 
     <section class="day-night-exposure" aria-labelledby="day-night-heading">
         <div class="day-night-inner">
-            <h2 id="day-night-heading" class="compliance-shield-title">Dzień · Noc</h2>
-            <p class="day-night-lead">Przeciągnij suwak: ostry, „zimny” interfejs dnia kontra przygaszony, bursztynowy profil <strong>Amber Horizon</strong> na noc (Premium). Widać izolację niebieskiego i przejście w barwy łagodniejsze dla widzenia skotopowego — to widok, za który warto zapłacić w nocnej jeździe.</p>
-            <div class="day-night-frame" data-day-night style="--exposure: 50%;">
-                <img class="day-night-base" src="../amber-compare-day.webp?v=1" alt="Waze na telefonie w jasnym świetle dnia — wysoki kontrast interfejsu" width="1245" height="2359" loading="lazy" decoding="async">
-                <img class="day-night-overlay" src="../amber-compare-night.webp?v=1" alt="" width="1245" height="2359" loading="lazy" decoding="async" aria-hidden="true">
+            <h2 id="day-night-heading" class="day-night-title">Adaptacyjna luminancja</h2>
+            <p class="day-night-lead">Ochrona biologiczna przed cyfrowym zmęczeniem. Po zmroku silnik optyczny bezwzględnie aktywuje profil <strong>Amber Horizon</strong>. Izoluje on agresywny kanał niebieski, chroniąc Twoją rodopsynę i widzenie skotopowe. Funkcja dostępna wyłącznie w planie <strong>Premium</strong>.</p>
+            <div class="day-night-device">
+                <div class="day-night-frame" data-day-night style="--exposure: 50%;">
+                    <img class="day-night-base" src="../amber-compare-day.webp?v=1" alt="Interfejs nawigacji przy pełnym świetle dnia" width="1245" height="2359" loading="lazy" decoding="async">
+                    <img class="day-night-overlay" src="../amber-compare-night.webp?v=1" alt="" width="1245" height="2359" loading="lazy" decoding="async" aria-hidden="true">
+                    <label class="day-night-range-wrap">
+                        <span class="sr-only">Porównanie dnia i nocy — profil Amber Horizon. Po fokusie: strzałki w lewo i w prawo.</span>
+                        <input type="range" class="day-night-range" data-day-night-range min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% widocznego profilu nocnego">
+                    </label>
+                </div>
                 <div class="day-night-cues" aria-hidden="true">
                     <span>Dzień</span>
                     <span>Noc</span>
                 </div>
-                <label class="day-night-range-wrap">
-                    <span class="sr-only">Mieszanie widoku od dnia do profilu nocnego. Po ustawieniu fokusu możesz użyć strzałek w lewo i w prawo.</span>
-                    <input type="range" class="day-night-range" data-day-night-range min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% widocznego profilu nocnego">
-                </label>
             </div>
         </div>
     </section>

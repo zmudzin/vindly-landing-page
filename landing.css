@@ -242,22 +242,37 @@ a.btn-play.disabled:hover {
 }
 
 .day-night-inner {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     max-width: var(--content-max);
     margin: 0 auto;
-    text-align: center;
+    width: 100%;
 }
 
-.day-night-exposure .compliance-shield-title {
-    margin-bottom: 1rem;
+.day-night-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: clamp(1.05rem, 2.2vw, 1.4rem);
+    letter-spacing: 0.24em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--white);
+    margin: 0 auto 1.125rem;
+    max-width: min(28rem, 100%);
+    padding: 0 1rem;
 }
 
 .day-night-lead {
-    max-width: 42rem;
-    margin: 0 auto 2rem;
+    max-width: min(34rem, 92vw);
+    margin: 0 auto 2.25rem;
+    padding: 0 1.25rem;
     color: var(--slate-400);
-    font-size: 0.95rem;
-    line-height: 1.6;
+    font-size: 0.9375rem;
+    line-height: 1.72;
     font-family: 'Inter', sans-serif;
+    text-align: center;
 }
 
 .day-night-lead strong {
@@ -265,11 +280,19 @@ a.btn-play.disabled:hover {
     font-weight: 600;
 }
 
-.day-night-frame {
-    position: relative;
+.day-night-device {
     width: 100%;
     max-width: 320px;
     margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.day-night-frame {
+    position: relative;
+    width: 100%;
+    margin: 0;
     aspect-ratio: 1245 / 2359;
     border-radius: 10px;
     overflow: hidden;
@@ -300,20 +323,20 @@ a.btn-play.disabled:hover {
 }
 
 .day-night-cues {
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 4;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
-    padding: 0.5rem 0.65rem 0.45rem;
+    align-items: baseline;
+    width: 100%;
+    margin: 0;
+    padding: 0.75rem 0 0;
+    box-sizing: border-box;
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 0.7rem;
-    letter-spacing: 0.18em;
+    font-weight: 600;
+    letter-spacing: 0.3em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.75);
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.85);
+    color: var(--steel-gray);
     pointer-events: none;
 }
 

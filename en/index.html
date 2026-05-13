@@ -62,19 +62,21 @@
 
     <section class="day-night-exposure" aria-labelledby="day-night-heading">
         <div class="day-night-inner">
-            <h2 id="day-night-heading" class="compliance-shield-title">Daylight · Night Shift</h2>
-            <p class="day-night-lead">Drag the handle to compare harsh daytime contrast with the muted, amber-toned <strong>Amber Horizon</strong> night profile (Premium). Blue-heavy light gives way to scotopic-friendly tones — the view night drivers pay for.</p>
-            <div class="day-night-frame" data-day-night style="--exposure: 50%;">
-                <img class="day-night-base" src="../amber-compare-day.webp?v=1" alt="Waze on phone in bright daylight — high-contrast interface" width="1245" height="2359" loading="lazy" decoding="async">
-                <img class="day-night-overlay" src="../amber-compare-night.webp?v=1" alt="" width="1245" height="2359" loading="lazy" decoding="async" aria-hidden="true">
-                <div class="day-night-cues" aria-hidden="true">
-                    <span>Daylight</span>
-                    <span>Night Shift</span>
+            <h2 id="day-night-heading" class="day-night-title">Adaptive luminance</h2>
+            <p class="day-night-lead">Biological protection against digital eye strain. After dark, the optical engine ruthlessly activates the <strong>Amber Horizon</strong> profile. It isolates the aggressive blue channel, protecting your rhodopsin and scotopic vision. Available exclusively on the <strong>Premium</strong> plan.</p>
+            <div class="day-night-device">
+                <div class="day-night-frame" data-day-night style="--exposure: 50%;">
+                    <img class="day-night-base" src="../amber-compare-day.webp?v=1" alt="Navigation interface in bright daylight" width="1245" height="2359" loading="lazy" decoding="async">
+                    <img class="day-night-overlay" src="../amber-compare-night.webp?v=1" alt="" width="1245" height="2359" loading="lazy" decoding="async" aria-hidden="true">
+                    <label class="day-night-range-wrap">
+                        <span class="sr-only">Day versus night — Amber Horizon profile. After focus: left and right arrow keys.</span>
+                        <input type="range" class="day-night-range" data-day-night-range min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% night profile visible">
+                    </label>
                 </div>
-                <label class="day-night-range-wrap">
-                    <span class="sr-only">Blend from daylight to night profile. Use left and right arrow keys after focusing the control.</span>
-                    <input type="range" class="day-night-range" data-day-night-range min="0" max="100" value="50" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50" aria-valuetext="50% night profile visible">
-                </label>
+                <div class="day-night-cues" aria-hidden="true">
+                    <span>Day</span>
+                    <span>Night</span>
+                </div>
             </div>
         </div>
     </section>
