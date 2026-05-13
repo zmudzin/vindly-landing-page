@@ -72,6 +72,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    var dayNightRoot = document.querySelector("[data-day-night]");
+    var dayNightRange = document.querySelector("[data-day-night-range]");
+    if (dayNightRoot && dayNightRange) {
+        var dayNightVtext = document.documentElement.lang === "pl" ? "% profilu nocnego" : "% night profile visible";
+        dayNightRange.addEventListener("input", function () {
+            dayNightRoot.style.setProperty("--exposure", this.value + "%");
+            this.setAttribute("aria-valuenow", this.value);
+            this.setAttribute("aria-valuetext", this.value + dayNightVtext);
+        });
+    }
+
     var lightbox = document.getElementById("field-proof-lightbox");
     if (!lightbox) return;
     var lightboxImg = lightbox.querySelector(".lightbox-target-image");
