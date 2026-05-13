@@ -97,9 +97,12 @@ document.addEventListener("DOMContentLoaded", function () {
         emailInput.placeholder = isPl ? "Oczekuj sygnału." : "Awaiting signal.";
     }
 
-    window.ml_webform_success_187353900174541990 = function () {
-        formSuccessState();
-    };
+    function waitlistFailState() {
+        if (!submitBtn || !emailInput) return;
+        submitBtn.disabled = false;
+        emailInput.disabled = false;
+        submitBtn.textContent = isPl ? "Błąd. Ponów." : "Error. Retry.";
+    }
 
     if (form && submitBtn && emailInput) {
         form.addEventListener("submit", function (e) {
@@ -123,25 +126,42 @@ document.addEventListener("DOMContentLoaded", function () {
                 encodeURIComponent(email) +
                 "&_=" +
                 new Date().getTime();
-            var script = document.createElement("script");
-            script.src = mlUrl;
-            script.async = true;
 
-            script.onload = function () {
-                if (script.parentNode) {
-                    script.parentNode.removeChild(script);
-                }
-            };
-            script.onerror = function () {
-                if (script.parentNode) {
-                    script.parentNode.removeChild(script);
-                }
-                submitBtn.disabled = false;
-                emailInput.disabled = false;
-                submitBtn.textContent = isPl ? "Błąd. Ponów." : "Error. Retry.";
-            };
-
-            document.head.appendChild(script);
+            fetch(mlUrl, {
+                method: "GET",
+                mode: "cors",
+                credentials: "omit",
+                cache: "no-store",
+            })
+                .then(function (res) {
+                    return res.text().then(function (text) {
+                        var data = {};
+                        if (text) {
+                            try {
+                                data = JSON.parse(text);
+                            } catch (parseErr) {
+                                throw parseErr;
+                            }
+                        }
+                        if (!res.ok) {
+                            throw new Error("http");
+                        }
+                        if (data.success === true || data.success === 1 || data.success === "true") {
+                            formSuccessState();
+                            return;
+                        }
+                        if (data.success === false || data.success === 0 || data.success === "false") {
+                            throw new Error("ml");
+                        }
+                        if (data.errors || data.error) {
+                            throw new Error("ml");
+                        }
+                        formSuccessState();
+                    });
+                })
+                .catch(function () {
+                    waitlistFailState();
+                });
         });
     }
 
