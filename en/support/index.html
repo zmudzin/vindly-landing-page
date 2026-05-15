@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Technical Support | Vindly</title>
+    <link rel="stylesheet" href="../../landing.css">
+    <style>
+        .support-container { max-width: 640px; margin: 4rem auto; padding: 0 1rem; color: #CBD5E1; }
+        .support-container h1 { color: #FFFFFF; margin-bottom: 2rem; }
+        .faq-section { margin-bottom: 3rem; border-left: 2px solid #00E5FF; padding-left: 1rem; }
+        .faq-item { margin-bottom: 1.5rem; }
+        .faq-item h3 { color: #00E5FF; font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: none; letter-spacing: 0; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .faq-item p { font-size: 0.9rem; line-height: 1.5; margin: 0; }
+        .support-form { display: flex; flex-direction: column; gap: 1rem; background: #1E293B; padding: 2rem; border-radius: 8px; }
+        .support-form.is-sent { display: none; }
+        .support-form label { font-size: 0.85rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; }
+        .support-form input, .support-form select, .support-form textarea {
+            background: #0F172A; border: 1px solid #334155; color: #FFFFFF;
+            padding: 0.75rem; border-radius: 4px; font-family: inherit;
+        }
+        .support-form input:focus, .support-form select:focus, .support-form textarea:focus { outline: none; border-color: #00E5FF; }
+        .priority-note { font-size: 0.75rem; color: #F59E0B; margin-top: -0.5rem; }
+        #status-message { display: none; padding: 2rem; background: #1E293B; border-radius: 8px; color: #00E5FF; text-align: center; font-weight: bold; }
+        #status-message.is-visible { display: block; }
+    </style>
+</head>
+<body>
+
+<main class="support-container">
+    <h1>Technical Support</h1>
+
+    <section class="faq-section">
+        <div class="faq-item">
+            <h3>App stops working after screen timeout.</h3>
+            <p>Your device manufacturer (e.g., Xiaomi, Samsung) aggressively kills background processes. Lock the app in the recent tasks view and check dontkillmyapp.com.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Navigation Bridge does not restore the map.</h3>
+            <p>Do not swipe Vindly away from the recent apps list. This action completely breaks the monitoring intent and halts the navigation routing.</p>
+        </div>
+        <div class="faq-item">
+            <h3>I cannot see the music panel.</h3>
+            <p>The Audio Node is disabled in the Free plan. An active Premium subscription is required.</p>
+        </div>
+    </section>
+
+    <form id="support-form" class="support-form" action="https://formspree.io/f/xjglqnol" method="POST">
+        <label for="email">Email address</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+
+        <label for="topic">Issue category</label>
+        <select id="topic" name="topic" required>
+            <option value="billing">Billing &amp; subscription (Premium)</option>
+            <option value="bug">Bug report</option>
+            <option value="a11y">Accessibility service issues</option>
+            <option value="other">Other</option>
+        </select>
+
+        <label for="gpa">Google Play Transaction ID (Optional)</label>
+        <input type="text" id="gpa" name="gpa" placeholder="GPA.1234-5678-9012-34567" autocomplete="off" spellcheck="false">
+        <span class="priority-note">Tickets with a valid Premium transaction ID are processed with priority.</span>
+
+        <label for="message">Technical description</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Describe the physical outcome of the issue. Include your device model and Android version."></textarea>
+
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+
+        <button type="submit" id="submit-btn" style="background:#00E5FF; color:#000; font-weight:bold; border:none; padding:1rem; cursor:pointer; margin-top:1rem; text-transform:uppercase;">Submit report</button>
+    </form>
+
+    <div id="status-message">Report: Accepted.</div>
+</main>
+
+<footer>
+    <div class="footer-rule" style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #334155;">
+        <a href="../../privacy-policy.html" class="link-cyan">Privacy Policy</a>
+    </div>
+</footer>
+
+<script src="support.js"></script>
+</body>
+</html>
