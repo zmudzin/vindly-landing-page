@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex">
+    <title>Wsparcie techniczne | Vindly</title>
+    <link rel="stylesheet" href="../landing.css">
+    <style>
+        /* Minimalne izolowane style kwarantanny, reszta dziedziczy z landing.css */
+        .support-container { max-width: 640px; margin: 4rem auto; padding: 0 1rem; color: #CBD5E1; }
+        .support-container h1 { color: #FFFFFF; margin-bottom: 2rem; }
+        .faq-section { margin-bottom: 3rem; border-left: 2px solid #00E5FF; padding-left: 1rem; }
+        .faq-item { margin-bottom: 1.5rem; }
+        .faq-item h3 { color: #00E5FF; font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: none; letter-spacing: 0; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .faq-item p { font-size: 0.9rem; line-height: 1.5; margin: 0; }
+        .support-form { display: flex; flex-direction: column; gap: 1rem; background: #1E293B; padding: 2rem; border-radius: 8px; }
+        .support-form.is-sent { display: none; }
+        .support-form label { font-size: 0.85rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 1px; }
+        .support-form input, .support-form select, .support-form textarea {
+            background: #0F172A; border: 1px solid #334155; color: #FFFFFF;
+            padding: 0.75rem; border-radius: 4px; font-family: inherit;
+        }
+        .support-form input:focus, .support-form select:focus, .support-form textarea:focus { outline: none; border-color: #00E5FF; }
+        .priority-note { font-size: 0.75rem; color: #F59E0B; margin-top: -0.5rem; }
+        #status-message { display: none; padding: 2rem; background: #1E293B; border-radius: 8px; color: #00E5FF; text-align: center; font-weight: bold; }
+        #status-message.is-visible { display: block; }
+    </style>
+</head>
+<body>
+
+<main class="support-container">
+    <h1>Wsparcie techniczne</h1>
+
+    <section class="faq-section">
+        <div class="faq-item">
+            <h3>Aplikacja przestaje działać po wygaszeniu ekranu.</h3>
+            <p>Twój producent (np. Xiaomi, Samsung) agresywnie ubija procesy w tle. Zablokuj aplikację w widoku ostatnich zadań (kłódka) i sprawdź ustawienia na stronie dontkillmyapp.com.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Mostek nawigacyjny nie przywraca mapy po zamknięciu panelu.</h3>
+            <p>Nie „wypychaj” aplikacji Vindly z listy ostatnich zadań. Wykonanie tego gestu bezwzględnie zrywa intencję monitorującą i zatrzymuje węzeł nawigacji.</p>
+        </div>
+        <div class="faq-item">
+            <h3>Nie widzę panelu muzyki.</h3>
+            <p>Moduł Audio Node jest zablokowany w planie darmowym. Wymagana jest aktywna subskrypcja Premium.</p>
+        </div>
+    </section>
+
+    <form id="support-form" class="support-form" action="https://formspree.io/f/xjglqnol" method="POST">
+        <label for="email">Adres e-mail</label>
+        <input type="email" id="email" name="email" required autocomplete="email">
+
+        <label for="topic">Kategoria problemu</label>
+        <select id="topic" name="topic" required>
+            <option value="billing">Płatności i subskrypcja (Premium)</option>
+            <option value="bug">Zgłoszenie błędu działania</option>
+            <option value="a11y">Problemy z usługą ułatwień dostępu</option>
+            <option value="other">Inne</option>
+        </select>
+
+        <label for="gpa">ID transakcji Google Play (opcjonalne)</label>
+        <input type="text" id="gpa" name="gpa" placeholder="GPA.1234-5678-9012-34567" autocomplete="off" spellcheck="false">
+        <span class="priority-note">Zgłoszenia zawierające poprawne ID transakcji Premium są przetwarzane poza kolejką.</span>
+
+        <label for="message">Opis techniczny</label>
+        <textarea id="message" name="message" rows="5" required placeholder="Opisz fizyczny skutek błędu. Wskaż model urządzenia i wersję Androida."></textarea>
+
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" class="sr-only" aria-hidden="true">
+
+        <button type="submit" id="submit-btn" style="background:#00E5FF; color:#000; font-weight:bold; border:none; padding:1rem; cursor:pointer; margin-top:1rem; text-transform:uppercase;">Wyślij raport</button>
+    </form>
+
+    <div id="status-message">Zgłoszenie: Przyjęte.</div>
+</main>
+
+<footer>
+    <div class="footer-rule" style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #334155;">
+        <a href="../privacy-policy.html" class="link-cyan">Polityka prywatności</a>
+    </div>
+</footer>
+
+<script src="support.js"></script>
+</body>
+</html>

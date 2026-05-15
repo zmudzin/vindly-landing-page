@@ -915,6 +915,194 @@ footer {
     text-decoration: underline;
 }
 
+/* Support quarantine page — no sales chrome */
+.support-page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.support-main {
+    flex: 1;
+    width: 100%;
+    max-width: min(640px, 92vw);
+    margin: 0 auto;
+    padding: clamp(48px, 8vw, 72px) clamp(20px, 4vw, 32px) 64px;
+}
+
+.support-header {
+    text-align: center;
+    margin-bottom: 48px;
+}
+
+.support-logo {
+    display: block;
+    margin: 0 auto 20px;
+    opacity: 0.9;
+}
+
+.support-header h1 {
+    font-size: clamp(1.75rem, 4vw, 2.25rem);
+    margin: 0 0 12px;
+    text-transform: none;
+    letter-spacing: 0.04em;
+}
+
+.support-lead {
+    margin: 0;
+    color: var(--slate-400);
+    font-size: 0.95rem;
+}
+
+.support-faq,
+.support-form-section {
+    margin-bottom: 48px;
+}
+
+.support-faq h2,
+.support-form-section h2 {
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--steel-gray);
+    margin: 0 0 20px;
+}
+
+.support-faq-list {
+    margin: 0;
+    padding: 0;
+}
+
+.support-faq-list > div {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding: 18px 0;
+}
+
+.support-faq-list > div:last-child {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.support-faq-list dt {
+    font-weight: 600;
+    color: var(--white);
+    margin: 0 0 8px;
+    font-family: 'Inter', sans-serif;
+    text-transform: none;
+    letter-spacing: 0;
+    font-size: 0.95rem;
+}
+
+.support-faq-list dd {
+    margin: 0;
+    color: var(--slate-400);
+    font-size: 0.9rem;
+    line-height: 1.55;
+}
+
+.support-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.support-field label {
+    display: block;
+    font-size: 0.8rem;
+    color: var(--slate-400);
+    margin-bottom: 8px;
+    text-transform: none;
+    letter-spacing: 0.02em;
+}
+
+.support-optional {
+    font-weight: 400;
+    color: var(--steel-gray);
+}
+
+.support-field input,
+.support-field select,
+.support-field textarea {
+    width: 100%;
+    font: inherit;
+    font-size: 0.95rem;
+    color: var(--white);
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(100, 116, 139, 0.35);
+    border-radius: 4px;
+    padding: 12px 14px;
+}
+
+.support-field input:focus,
+.support-field select:focus,
+.support-field textarea:focus {
+    outline: none;
+    border-color: var(--velocity-cyan);
+    box-shadow: 0 0 0 1px rgba(0, 229, 255, 0.25);
+}
+
+.support-field select {
+    cursor: pointer;
+}
+
+.support-field textarea {
+    resize: vertical;
+    min-height: 140px;
+}
+
+.support-hint {
+    margin: 8px 0 0;
+    font-size: 0.78rem;
+    color: var(--steel-gray);
+    line-height: 1.45;
+}
+
+.support-form button[type="submit"] {
+    align-self: flex-start;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 28px;
+    border: none;
+    border-radius: 4px;
+    background: var(--velocity-cyan);
+    color: var(--midnight-navy);
+    cursor: pointer;
+    transition: opacity 0.2s ease;
+}
+
+.support-form button[type="submit"]:hover:not(:disabled) {
+    opacity: 0.92;
+}
+
+.support-form button[type="submit"]:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.support-status {
+    margin: 0;
+    font-size: 0.85rem;
+    color: var(--slate-400);
+    min-height: 1.25em;
+}
+
+.support-status--ok {
+    color: var(--velocity-cyan);
+}
+
+.support-status--err {
+    color: #f87171;
+}
+
+.support-footer {
+    padding: 24px clamp(20px, 4vw, 32px) 40px;
+    text-align: center;
+    font-size: 0.8rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
 @media (max-width: 1024px) {
     .features {
         grid-template-columns: 1fr;
