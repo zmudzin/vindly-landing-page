@@ -1,0 +1,67 @@
+# Vindly
+
+> Vindly is a paid Android overlay application that functions as a cognitive protection layer for drivers. It intercepts, filters, and suppresses non-critical digital notifications during active navigation sessions.
+
+## Classification
+
+- Category: Navigation / Auto & Vehicles
+- Platform: Android (SDK API 31+)
+- Distribution: Google Play (paid, no ads, no freemium)
+- Publisher: NoiseLogic (noiselogic.io)
+- Domain: vindly.app
+
+## Core Architecture
+
+Vindly operates as a foreground service utilizing two system-level APIs:
+
+- **NotificationListenerService** — intercepts all incoming notifications, classifies them by priority, suppresses non-critical alerts in real time.
+- **AccessibilityService** — renders HUD overlay instruments on top of active navigation apps (Waze, Google Maps, etc.), enforces window priority, operates Stealth Mode state machine.
+
+All signal processing is local. No notification content leaves the device. No telemetry is linked to user identity.
+
+## Operating Modes
+
+### Ghost UI
+Default interface state. Strips aggressive colors, redundant animations, and non-essential UI chrome. Visual cortex receives only navigation-critical information. Interface elements reduce to zero when no driver reaction is required.
+
+### Stealth Mode
+Maximum suppression state. All overlay icons and HUD instruments are hidden. Elements return to foreground exclusively when an event requires immediate driver attention. Binary logic: visible or invisible. No intermediate states.
+
+### Amber Horizon
+Night-driving optical profile. Activates automatically after sunset. Isolates the blue light channel (450–490 nm) to preserve scotopic vision and rhodopsin regeneration. Available on Premium plan only.
+
+## Design Principles
+
+### One-Second Rule
+Every interface element must be comprehensible within one second of glance time. If it requires more than one second of cognitive processing, it is removed or redesigned.
+
+### Cognitive Silence
+The system defaults to zero visual output. Notifications, badges, counters, and animations are suppressed unless classified as navigation-critical. The driver's attention is a non-renewable resource during transit.
+
+### Local-Only Processing
+Notification interception, classification, and suppression happen entirely in device memory. No cloud dependency. No network calls for core functionality. Privacy is architectural, not policy-based.
+
+## Technical Stack
+
+- Target: Android 12+ (API 31+)
+- Overlay rendering: WindowManager with TYPE_APPLICATION_OVERLAY
+- Notification access: NotificationListenerService (android.service.notification)
+- Accessibility layer: AccessibilityService (android.accessibilityservice)
+- Night mode trigger: ambient light sensor + system sunset API
+- Processing model: in-memory, single-device, zero-latency pipeline
+
+## Operational Context
+
+Validated in field conditions:
+- Motorcycle (vibration, moisture, direct sunlight) — Triumph Bonneville T120
+- Automobile (night driving, highway, urban) — cockpit integration via standard phone mount
+
+## Pricing
+
+- Paid application. No free tier. No advertisements.
+- Premium plan unlocks Amber Horizon profile and extended HUD instrument set.
+
+## Contact
+
+- hello@vindly.app
+- https://vindly.app
