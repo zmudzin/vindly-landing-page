@@ -755,6 +755,58 @@ body.lightbox-open {
     text-align: left;
 }
 
+/* --- FAQ SECTION --- */
+.faq-section {
+    margin-top: var(--section-y);
+    padding: 4rem clamp(22px, 5vw, 48px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: transparent;
+    max-width: var(--content-max);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.faq-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+.faq-list .faq-item {
+    padding: 1.75rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding-left: 1.25rem;
+    border-left: 2px solid var(--velocity-cyan);
+}
+
+.faq-list .faq-item:first-child {
+    padding-top: 0;
+}
+
+.faq-list .faq-item:last-child {
+    border-bottom: none;
+}
+
+.faq-list .faq-item h3 {
+    margin: 0 0 0.6rem;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.25;
+    color: var(--white);
+}
+
+.faq-list .faq-item p {
+    margin: 0;
+    color: var(--slate-400);
+    font-size: 0.9rem;
+    line-height: 1.6;
+    font-family: 'Inter', sans-serif;
+    max-width: 72ch;
+}
+
 /* --- TARCZA COMPLIANCE --- */
 .compliance-shield {
     margin-top: var(--section-y);
