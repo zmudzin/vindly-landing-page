@@ -6,7 +6,7 @@
     --premium-gold: #F59E0B;
     --white: #FFFFFF;
     --content-max: 1200px;
-    --section-y: 120px;
+    --section-y: clamp(56px, 11vw, 120px);
 }
 
 @font-face {
@@ -409,13 +409,16 @@ a.btn-play.disabled:hover {
     margin-top: var(--section-y);
     padding: clamp(32px, 5vw, 56px) clamp(22px, 5vw, 48px) clamp(48px, 8vw, 80px);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.comparison-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: max(4rem, 5vw);
     text-align: center;
     max-width: var(--content-max);
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .screen-slot {
@@ -628,12 +631,15 @@ body.lightbox-open {
     margin-top: var(--section-y);
     padding: clamp(44px, 7vw, 72px) clamp(22px, 5vw, 48px) clamp(56px, 9vw, 88px);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.features-inner {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: max(2rem, 3vw);
     max-width: var(--content-max);
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+    width: 100%;
 }
 
 .feature-item {
@@ -673,12 +679,9 @@ body.lightbox-open {
 /* --- FAQ SECTION --- */
 .faq-section {
     margin-top: var(--section-y);
-    padding: 4rem clamp(22px, 5vw, 48px);
+    padding: clamp(2.75rem, 6vw, 4rem) clamp(22px, 5vw, 48px);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
-    max-width: var(--content-max);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .faq-list {
@@ -725,12 +728,9 @@ body.lightbox-open {
 /* --- TARCZA COMPLIANCE --- */
 .compliance-shield {
     margin-top: var(--section-y);
-    padding: 4rem clamp(22px, 5vw, 48px);
+    padding: clamp(2.75rem, 6vw, 4rem) clamp(22px, 5vw, 48px);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
     background-color: transparent;
-    max-width: var(--content-max);
-    margin-left: auto;
-    margin-right: auto;
 }
 
 .compliance-shield-inner {
@@ -1076,7 +1076,7 @@ footer {
 }
 
 @media (max-width: 1024px) {
-    .features {
+    .features-inner {
         grid-template-columns: 1fr;
     }
 }
@@ -1110,7 +1110,7 @@ footer {
         margin-right: auto;
     }
 
-    .comparison {
+    .comparison-inner {
         grid-template-columns: 1fr;
         gap: 3rem;
     }
