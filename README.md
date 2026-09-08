@@ -1,20 +1,21 @@
-# Vindly — Cognitive Protection Layer for Drivers
+# Vindly — Auto Return to Maps
 
-Vindly is a paid Android overlay that eliminates sensory overload behind the wheel. It suppresses non-critical notifications during active navigation, rendering a distraction-free Ghost UI on top of any map app.
+Vindly is an Android overlay that brings the map back after a phone call and after returning to the home screen. It works with Google Maps, Yanosik, Waze, and Calimoto. Free core. No ads. No tracking.
 
 ## What it does
 
-- Blocks digital noise while you drive or ride
-- Ghost UI: zero visual clutter, one-second glance readability
-- Stealth Mode: screen stays silent until something critical happens
-- Amber Horizon: night-driving profile that protects your vision
-- Optimized for motorcycle phone mounts (vibration-proof, glove-friendly)
+- Free core: map returns after a phone call and from the home screen
+- Smart HUD: controls stay on the map
+- Ghost UI: icons dim while you drive and return when something needs attention
+- Premium: Intelligent Navigation Bridge (per-app return timers), Music Hub, Adaptive Horizon, Vindly AI
+- Readable on motorcycle mounts (vibration, rain, gloves)
 
 ## Technical basis
 
 - Android 12+ (API 31+)
-- NotificationListenerService + AccessibilityService
-- Local-only processing — no data leaves the device
+- AccessibilityService — detect screen changes and restore navigation
+- Notification access — let important driving alerts through
+- Local processing — notification content does not go to the cloud
 
 ## Links
 
