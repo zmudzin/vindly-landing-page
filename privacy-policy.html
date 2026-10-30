@@ -6,8 +6,6 @@
     <title>Privacy Policy | Vindly</title>
     <meta name="description" content="Privacy Policy for Vindly by Noiselogic. Learn how Vindly processes data locally and protects user privacy.">
     <link rel="canonical" href="https://vindly.app/privacy-policy.html">
-    <link rel="alternate" hreflang="pl" href="https://vindly.app/pl/">
-    <link rel="alternate" hreflang="en" href="https://vindly.app/en/">
     <style>
         @font-face {
             font-family: 'Inter';
@@ -87,9 +85,7 @@
         .hero {
             padding: 72px 20px 40px;
             text-align: center;
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.95)), url('hero shot.png');
-            background-size: cover;
-            background-position: center;
+            background: radial-gradient(circle at 50% 20%, rgba(0, 229, 255, 0.08), transparent 70%), var(--midnight-navy);
             border-bottom: 1px solid rgba(100, 116, 139, 0.3);
         }
 
@@ -173,7 +169,7 @@
 </head>
 <body>
     <header class="hero">
-        <a href="pl/index.html" class="logo-link" aria-label="Vindly — strona główna (PL)">
+        <a href="/" class="logo-link" aria-label="Vindly">
             <img src="logo-vindly.svg" alt="Vindly Logo" class="logo" width="200" height="149">
         </a>
         <h1>Privacy Policy for Vindly</h1>
@@ -181,30 +177,30 @@
     </header>
 
     <main class="content">
-        <p class="meta"><strong>Last updated:</strong> April 15, 2026</p>
+        <p class="meta"><strong>Last updated:</strong> October 30, 2026</p>
 
         <section class="section">
             <h2>1. Introduction</h2>
             <p>
                 Vindly ("the App") is developed by Michal Zmudzin, operating under the studio name Noiselogic
-                ("we", "us", or "our"). Vindly is designed as an Augmented Focus Layer for drivers and riders.
+                ("we", "us", or "our"). Vindly is an Android overlay application designed for drivers and riders
+                to keep navigation front and center, eliminate interface distractions, and automate route return.
             </p>
             <p>
-                Our commitment is simple: We do not collect, store, or share your personal data.
-                All processing happens locally on your device to ensure maximum privacy and performance.
+                Our architectural commitment is built around "Quiet Tech" and user privacy: core features process
+                signals locally on your device, while necessary cloud integrations operate under strict minimal-data and zero-retention principles.
             </p>
         </section>
 
         <section class="section">
-            <h2>2. Information We Do NOT Collect</h2>
-            <p>Vindly is built on the principle of "Zero Noise". We do not collect:</p>
+            <h2>2. Information We Collect and Process</h2>
+            <p>We believe in radical transparency regarding what the App processes:</p>
             <ul>
-                <li>Personal identification information (name, email, phone number).</li>
-                <li>Location data or GPS coordinates (we display your map, but never record where you are).</li>
-                <li>Contact lists or call logs (we access them locally to display them to you, but never upload them).</li>
-                <li>Message content (Vindly AI processes message summaries locally on your device).</li>
-                <li>Device identifiers or advertising IDs.</li>
-                <li>Usage analytics or behavioral data.</li>
+                <li><strong>Local Navigation &amp; Overlay State:</strong> Vindly monitors screen transitions and active packages solely on-device to restore your navigation application (Navigation Bridge) and dim controls (Ghost UI). We never record, upload, or track your GPS coordinates or travel history.</li>
+                <li><strong>Contacts &amp; Phone Calls:</strong> Accessed locally under user-granted runtime permissions to present the in-ride HUD contacts and detect call termination for automatic map return. Your phone book and call logs never leave your device.</li>
+                <li><strong>Notifications:</strong> The Notification Listener service inspects incoming message metadata locally to display counters and allow hands-free interaction. Notification payloads are not permanently stored or harvested.</li>
+                <li><strong>Vindly AI Summaries:</strong> When you invoke Vindly AI, message context is sent via secure HTTPS to our backend (Firebase Cloud Functions) interfacing with OpenAI / OpenRouter. Processing operates strictly under a <strong>Zero Data Retention</strong> agreement — inputs and outputs are not retained or used for AI model training.</li>
+                <li><strong>Application Telemetry &amp; Diagnostics:</strong> To ensure high stability across diverse Android versions and vehicle mounts, we collect anonymous diagnostic logs and crash reports via Google Firebase Crashlytics, alongside aggregated app-usage metrics via Google Analytics for Firebase (GA4 <code>prod</code>). This telemetry cannot be used to personally identify you.</li>
             </ul>
         </section>
 
@@ -212,75 +208,83 @@
             <h2>3. Permissions &amp; API Disclosure (Crucial)</h2>
 
             <h3>Accessibility Service API</h3>
-            <p>We use the AccessibilityService API exclusively to:</p>
+            <p>We use the AccessibilityService API strictly to:</p>
             <ul>
-                <li>Display the Smart HUD overlay interface over navigation applications (for example Google Maps and Waze).</li>
-                <li>Ensure uninterrupted navigation by detecting app switches and restoring navigation to foreground (Force-Map Return).</li>
-                <li>Enable Ghost UI by managing the visibility and transparency of overlay elements based on user interaction.</li>
+                <li>Display the Smart HUD overlay interface over navigation applications (such as Google Maps, Waze, Yanosik, and Calimoto).</li>
+                <li>Ensure route continuity by detecting app switches and restoring your designated navigation app to the foreground after phone calls, launcher drops, or configured app timeouts (Navigation Bridge).</li>
+                <li>Manage overlay visibility and transparency based on driving dynamics and touch interaction (Ghost UI).</li>
             </ul>
 
             <p class="note">We do NOT use the AccessibilityService API to:</p>
             <ul>
-                <li>Read, record, or log any content from other apps.</li>
-                <li>Collect any personal or sensitive user data.</li>
-                <li>Modify system settings without your consent.</li>
+                <li>Read, record, or log any text or credentials from third-party applications.</li>
+                <li>Capture screen keystrokes, passwords, or banking information.</li>
+                <li>Alter system security settings or bypass user consent.</li>
             </ul>
 
             <h3>Notification Access</h3>
             <p>
-                Used only to display notification counts and allow you to interact with incoming messages hands-free.
-                Content is processed locally and never transmitted.
+                Used only to detect incoming communications while driving, display Smart HUD badges, and route message summaries to Vindly AI upon your request.
             </p>
 
-            <h3>Bluetooth &amp; NFC</h3>
+            <h3>Microphone Permission (<code>RECORD_AUDIO</code>)</h3>
             <p>
-                Used to detect when you mount your phone or connect to your vehicle,
-                enabling the Smart Automation feature (auto-launch).
+                Required only if you use voice confirmation (DPN-1) with Vindly AI (e.g. answering "Yes" or "No" hands-free). Audio input is captured ephemerally for the immediate spoken confirmation, processed on-device or streamed transiently, and immediately discarded. It is never stored, recorded, or used for voice profiling.
+            </p>
+
+            <h3>Do Not Disturb (DND) &amp; System Settings</h3>
+            <p>
+                Used to power Focus Lock sessions, allowing you to suppress non-essential interruptions and notification banners during active driving while preserving navigation and critical emergency calls.
+            </p>
+
+            <h3>Bluetooth &amp; Vehicle Detection</h3>
+            <p>
+                Used to recognize paired automotive and motorcycle Bluetooth connections to automatically activate the Smart HUD cockpit upon mounting.
             </p>
         </section>
 
         <section class="section">
             <h2>4. Data Storage &amp; Security</h2>
-            <p>All app settings, theme preferences (Advanced Lab), and configurations are stored locally on your device.</p>
+            <p>All app settings, timer configurations, and interface themes are stored locally in your device's private sandbox (Android Encrypted SharedPreferences):</p>
             <ul>
-                <li>Data is not backed up to external servers.</li>
-                <li>Data is permanently deleted when you uninstall the App.</li>
-                <li>Since we do not host your data, there is no risk of server-side data breaches.</li>
+                <li>Configurations are not uploaded or synchronized with any proprietary user database.</li>
+                <li>Data is permanently deleted from your device when you clear app data or uninstall the App.</li>
+                <li>Communications with cloud endpoints (Firebase, AI APIs) use modern TLS 1.3 encryption.</li>
             </ul>
         </section>
 
         <section class="section">
             <h2>5. Third-Party Services</h2>
             <ul>
-                <li>No Ads: Vindly does not contain advertising SDKs or tracking pixels.</li>
-                <li>
-                    Google Play Billing: We use Google's official system for Premium subscriptions.
-                    We never see or store your credit card or payment details; this is handled entirely by Google.
-                </li>
+                <li><strong>Google Play Billing:</strong> Handles payments, monthly subscriptions, and annual subscriptions (including the 1-month free trial). Google securely processes all financial transactions; Vindly never handles or stores payment details.</li>
+                <li><strong>Google Firebase (Crashlytics &amp; GA4 <code>prod</code>):</strong> Collects anonymized telemetry, device models, and crash stack traces to diagnose bugs and maintain platform reliability across Android 10+ (API 29–36).</li>
+                <li><strong>OpenRouter / OpenAI (via Firebase Cloud Functions):</strong> Cloud-based language models powering Vindly AI message summaries under a strict Zero Data Retention policy.</li>
+                <li><strong>No Advertising:</strong> Vindly contains zero advertising SDKs, ad networks, or third-party commercial trackers.</li>
             </ul>
         </section>
 
         <section class="section">
             <h2>6. Children's Privacy</h2>
             <p>
-                Vindly is not directed at children under the age of 13.
-                We do not knowingly collect any information from children.
+                Vindly is not directed to individuals under the age of 13.
+                We do not knowingly collect or solicit personal data from children.
             </p>
         </section>
 
         <section class="section">
             <h2>7. Your Rights</h2>
-            <p>You have full control. You can:</p>
+            <p>You maintain complete control over the application's capabilities:</p>
             <ul>
-                <li>Revoke any permission at any time in Android Settings.</li>
-                <li>Clear all local data via Android App Info.</li>
-                <li>Uninstall the app to remove all traces of its configuration.</li>
+                <li>Revoke any runtime permission (Accessibility, Notifications, Microphone) at any time via Android Settings.</li>
+                <li>Opt out of analytics and telemetry via device-level Google settings.</li>
+                <li>Clear all local preferences via Android Settings &gt; Apps &gt; Vindly &gt; Clear Storage.</li>
+                <li>Uninstall the App to completely remove all traces of its presence on your device.</li>
             </ul>
         </section>
 
         <section class="section">
             <h2>8. Contact Us</h2>
-            <p>If you have any questions regarding this policy or our Noiselogic privacy standards, please contact us:</p>
+            <p>If you have any questions regarding this policy or our privacy practices, please contact us:</p>
             <ul>
                 <li>Email: <a href="mailto:hello@vindly.app">hello@vindly.app</a></li>
                 <li>Developer: Michal Zmudzin (Noiselogic)</li>
@@ -293,9 +297,9 @@
     <footer class="footer">
         <div>NOISELOGIC<span style="color: var(--velocity-cyan);">.IO</span> | Originators of Vindly</div>
         <p style="margin: 16px 0 8px; font-size: 0.85rem;">
-            <a class="back-link" href="pl/index.html" hreflang="pl">Vindly (PL)</a>
+            <a class="back-link" href="/pl/" hreflang="pl">Vindly (PL)</a>
             &nbsp;·&nbsp;
-            <a class="back-link" href="en/index.html" hreflang="en">Vindly (EN)</a>
+            <a class="back-link" href="/en/" hreflang="en">Vindly (EN)</a>
         </p>
     </footer>
 </body>

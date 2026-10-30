@@ -3,17 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Wsparcie Vindly. Pomoc z instalacją, powrotem do mapy, Ghost UI, Adaptive Horizon i planem Free/Premium.">
+    <meta name="description" content="Wsparcie techniczne Vindly. Pomoc z instalacją, powrotem do mapy, Ghost UI, Adaptive Horizon i planem Free/Premium.">
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <title>Wsparcie techniczne | Vindly</title>
+    <link rel="canonical" href="https://vindly.app/support/">
+    <link rel="alternate" hreflang="pl" href="https://vindly.app/support/">
+    <link rel="alternate" hreflang="en" href="https://vindly.app/en/support/">
+    <link rel="alternate" hreflang="x-default" href="https://vindly.app/support/">
     <link rel="stylesheet" href="../landing.css">
     <style>
-        /* Minimalne izolowane style kwarantanny, reszta dziedziczy z landing.css */
-        .support-container { max-width: 640px; margin: 4rem auto; padding: 0 1rem; color: #CBD5E1; }
-        .support-container h1 { color: #FFFFFF; margin-bottom: 2rem; }
+        .support-container { max-width: 640px; margin: 3rem auto 4rem; padding: 0 1rem; color: #CBD5E1; }
+        .support-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid #334155; padding-bottom: 1rem; }
+        .support-header h1 { color: #FFFFFF; margin: 0; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1.5px; }
+        .support-lang-nav { display: flex; gap: 0.75rem; font-size: 0.85rem; font-family: 'Barlow', sans-serif; font-weight: 600; }
+        .support-lang-nav a { color: #64748B; text-decoration: none; }
+        .support-lang-nav a:hover, .support-lang-nav a.active { color: #00E5FF; }
         .faq-section { margin-bottom: 3rem; border-left: 2px solid #00E5FF; padding-left: 1rem; }
         .faq-item { margin-bottom: 1.5rem; }
-        .faq-item h3 { color: #00E5FF; font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: none; letter-spacing: 0; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .faq-item h3 { color: #00E5FF; font-size: 1.05rem; margin-bottom: 0.5rem; text-transform: none; letter-spacing: 0; font-family: 'Inter', sans-serif; font-weight: 600; }
         .faq-item p { font-size: 0.9rem; line-height: 1.5; margin: 0; }
         .support-form { display: flex; flex-direction: column; gap: 1rem; background: #1E293B; padding: 2rem; border-radius: 8px; }
         .support-form.is-sent { display: none; }
@@ -31,7 +38,14 @@
 <body>
 
 <main class="support-container">
-    <h1>Wsparcie techniczne</h1>
+    <div class="support-header">
+        <h1>Wsparcie techniczne</h1>
+        <nav class="support-lang-nav" aria-label="Wybierz język">
+            <span class="active">Polski</span>
+            <span>|</span>
+            <a href="/en/support/" hreflang="en">English</a>
+        </nav>
+    </div>
 
     <section class="faq-section">
         <div class="faq-item">
@@ -40,15 +54,15 @@
         </div>
         <div class="faq-item">
             <h3>Mapa nie wraca po rozmowie ani po powrocie na ekran główny.</h3>
-            <p>Nie zamykaj Vindly z listy ostatnich aplikacji. Ten gest wyłącza monitorowanie i zatrzymuje powrót do mapy.</p>
+            <p>Nie zamykaj Vindly z listy ostatnich aplikacji. Ten gest wyłącza monitorowanie i zatrzymuje powrót do mapy. Upewnij się, że usługa ułatwień dostępu (AccessibilityService) jest aktywna.</p>
         </div>
         <div class="faq-item">
-            <h3>Nie widzę panelu muzyki.</h3>
-            <p>Music Hub jest w Premium. Wymagana jest aktywna subskrypcja Premium.</p>
+            <h3>Czy jest darmowy okres próbny na plan Premium?</h3>
+            <p>Tak. Plan roczny oferuje <strong>1 miesiąc bezpłatnego okresu próbnego</strong> (30 dni) w Google Play (potem 99,99 zł/rok). Dostępny jest także elastyczny plan miesięczny (24,99 zł/mies.) bez okresu próbnego.</p>
         </div>
         <div class="faq-item">
             <h3>Czy powrót z każdej aplikacji jest darmowy?</h3>
-            <p>Nie. Darmowy rdzeń przywraca mapę po rozmowie i z ekranu głównego. Własne czasy powrotu dla innych aplikacji są w Premium.</p>
+            <p>Nie. Darmowy rdzeń (Navigation Bridge) przywraca mapę po rozmowie telefonicznej oraz z ekranu głównego (launcher). Indywidualne timery powrotu dla innych aplikacji (np. Spotify, komunikatory) są częścią planu Premium (Intelligent Navigation Bridge).</p>
         </div>
     </section>
 
@@ -81,7 +95,9 @@
 
 <footer>
     <div class="footer-rule" style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #334155;">
-        <a href="../privacy-policy.html" class="link-cyan">Polityka prywatności</a>
+        <a href="/pl/" class="link-cyan">Strona główna</a>
+        &nbsp;|&nbsp;
+        <a href="/privacy-policy.html" class="link-cyan">Polityka prywatności</a>
     </div>
 </footer>
 

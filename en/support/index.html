@@ -3,16 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Vindly support. Help with setup, map restore, Ghost UI, Adaptive Horizon, and Free vs Premium.">
+    <meta name="description" content="Vindly technical support. Help with setup, navigation restore, Ghost UI, Adaptive Horizon, and Free vs Premium plans.">
     <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <title>Technical Support | Vindly</title>
+    <link rel="canonical" href="https://vindly.app/en/support/">
+    <link rel="alternate" hreflang="pl" href="https://vindly.app/support/">
+    <link rel="alternate" hreflang="en" href="https://vindly.app/en/support/">
+    <link rel="alternate" hreflang="x-default" href="https://vindly.app/support/">
     <link rel="stylesheet" href="../../landing.css">
     <style>
-        .support-container { max-width: 640px; margin: 4rem auto; padding: 0 1rem; color: #CBD5E1; }
-        .support-container h1 { color: #FFFFFF; margin-bottom: 2rem; }
+        .support-container { max-width: 640px; margin: 3rem auto 4rem; padding: 0 1rem; color: #CBD5E1; }
+        .support-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem; border-bottom: 1px solid #334155; padding-bottom: 1rem; }
+        .support-header h1 { color: #FFFFFF; margin: 0; font-family: 'Barlow Condensed', sans-serif; text-transform: uppercase; letter-spacing: 1.5px; }
+        .support-lang-nav { display: flex; gap: 0.75rem; font-size: 0.85rem; font-family: 'Barlow', sans-serif; font-weight: 600; }
+        .support-lang-nav a { color: #64748B; text-decoration: none; }
+        .support-lang-nav a:hover, .support-lang-nav a.active { color: #00E5FF; }
         .faq-section { margin-bottom: 3rem; border-left: 2px solid #00E5FF; padding-left: 1rem; }
         .faq-item { margin-bottom: 1.5rem; }
-        .faq-item h3 { color: #00E5FF; font-size: 1.1rem; margin-bottom: 0.5rem; text-transform: none; letter-spacing: 0; font-family: 'Inter', sans-serif; font-weight: 600; }
+        .faq-item h3 { color: #00E5FF; font-size: 1.05rem; margin-bottom: 0.5rem; text-transform: none; letter-spacing: 0; font-family: 'Inter', sans-serif; font-weight: 600; }
         .faq-item p { font-size: 0.9rem; line-height: 1.5; margin: 0; }
         .support-form { display: flex; flex-direction: column; gap: 1rem; background: #1E293B; padding: 2rem; border-radius: 8px; }
         .support-form.is-sent { display: none; }
@@ -30,24 +38,31 @@
 <body>
 
 <main class="support-container">
-    <h1>Technical Support</h1>
+    <div class="support-header">
+        <h1>Technical Support</h1>
+        <nav class="support-lang-nav" aria-label="Select language">
+            <a href="/support/" hreflang="pl">Polski</a>
+            <span>|</span>
+            <span class="active">English</span>
+        </nav>
+    </div>
 
     <section class="faq-section">
         <div class="faq-item">
             <h3>App stops working after screen timeout.</h3>
-            <p>Your device manufacturer (e.g., Xiaomi, Samsung) aggressively kills background processes. Lock the app in the recent tasks view and check dontkillmyapp.com.</p>
+            <p>Your device manufacturer (e.g., Xiaomi, Samsung) aggressively terminates background processes. Lock Vindly in the recent tasks overview (padlock icon) and check dontkillmyapp.com for OEM-specific settings.</p>
         </div>
         <div class="faq-item">
             <h3>The map does not come back after a call or after returning to the home screen.</h3>
-            <p>Do not swipe Vindly away from recent apps. That stops monitoring and map restore.</p>
+            <p>Do not swipe Vindly away from recent apps. Swiping it out kills background monitoring and halts map restore. Make sure AccessibilityService is enabled.</p>
         </div>
         <div class="faq-item">
-            <h3>I cannot see the music panel.</h3>
-            <p>Music Hub is Premium. An active Premium subscription is required.</p>
+            <h3>Is there a free trial for the Premium plan?</h3>
+            <p>Yes. The annual subscription includes a <strong>1-month free trial</strong> (30 days) on Google Play (then $29.99/year). A flexible monthly plan is also available without a trial.</p>
         </div>
         <div class="faq-item">
             <h3>Does the free plan restore the map from every app?</h3>
-            <p>No. The free core covers phone calls and the home screen. Custom return timers for other apps are Premium.</p>
+            <p>No. The free core (Navigation Bridge) covers phone calls and returning to the home screen launcher. Custom return timers for other applications (such as Spotify or messaging apps) are part of the Premium plan (Intelligent Navigation Bridge).</p>
         </div>
     </section>
 
@@ -80,7 +95,9 @@
 
 <footer>
     <div class="footer-rule" style="text-align: center; margin-top: 4rem; padding-top: 2rem; border-top: 1px solid #334155;">
-        <a href="../../privacy-policy.html" class="link-cyan">Privacy Policy</a>
+        <a href="/en/" class="link-cyan">Home</a>
+        &nbsp;|&nbsp;
+        <a href="/privacy-policy.html" class="link-cyan">Privacy Policy</a>
     </div>
 </footer>
 
