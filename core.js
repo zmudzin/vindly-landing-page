@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
     var lightbox = document.getElementById("field-proof-lightbox");
     if (!lightbox) return;
     var lightboxImg = lightbox.querySelector(".lightbox-target-image");
-    var triggers = proofRoot ? proofRoot.querySelectorAll("[data-lightbox-trigger]") : document.querySelectorAll("#field-proof [data-lightbox-trigger]");
+    var triggers = document.querySelectorAll("[data-lightbox-trigger]");
     var closeBtn = lightbox.querySelector(".lightbox-close");
     if (!lightboxImg || !closeBtn) return;
 

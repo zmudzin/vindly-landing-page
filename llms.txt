@@ -1,6 +1,6 @@
 # Vindly
 
-> Vindly is an Android overlay application that brings navigation back to the foreground after a phone call and after returning to the home screen. It sits on top of Google Maps, Yanosik, Waze, and Calimoto. Free core with no ads; advanced automation and Quiet Tech features are Premium.
+> Vindly is a Smart HUD application for Android that brings navigation back to the foreground after a phone call and after returning to the home screen. It sits on top of Google Maps, Yanosik, Waze, and Calimoto. Free core with no ads; advanced automation and Quiet Tech features are Premium.
 
 ## Classification
 
@@ -24,7 +24,7 @@
 - **Intelligent Navigation Bridge:** Custom per-app return-to-map timers (App Node) for external apps (Spotify, WhatsApp, messaging apps).
 - **Adaptive Horizon & Ghost UI:** Circadian night optics (Amber Horizon warm colorway) automatically protecting night vision; Ghost UI auto-dims icons during steady cruising and restores them when interaction is needed.
 - **Music Hub & Audio Node:** In-ride media control overlay without leaving navigation.
-- **Vindly AI with DPN-1:** Spoken incoming message summaries with dual-input hands-free confirmation (DPN-1 voice "Yes/No" or on-screen tap) operated via Firebase Cloud Functions under strict Zero Data Retention.
+- **Vindly AI:** Spoken incoming message summaries with hands-free confirmation (voice "Yes/No" or on-screen tap) operated via Firebase Cloud Functions under strict Zero Data Retention.
 - **Focus Lock (HUD Quick-Toggle) & Smart Hide:** One-tap DND override directly from the Smart HUD bar; Smart Hide automatically suspends overlay icons in designated apps.
 - **Full Interface Control:** Smooth icon resizing slider, custom color palettes, and Premium Gold (`#F59E0B`) novelty attention chrome.
 

@@ -1,6 +1,6 @@
 # Vindly — Auto Return to Maps
 
-Vindly is an Android overlay application that brings navigation back after a phone call and after returning to the home screen. It sits on top of Google Maps, Yanosik, Waze, and Calimoto. Free core with no ads; advanced automation and Quiet Tech features are Premium.
+Vindly is a Smart HUD application for Android that brings navigation back after a phone call and after returning to the home screen. It sits on top of Google Maps, Yanosik, Waze, and Calimoto. Free core with no ads; advanced automation and Quiet Tech features are Premium.
 
 ## What it does
 
@@ -8,17 +8,17 @@ Vindly is an Android overlay application that brings navigation back after a pho
 - **Intelligent Navigation Bridge (Premium):** Custom return-to-map timers per third-party app
 - **Adaptive Horizon & Ghost UI (Premium):** Amber Horizon circadian night optics protecting night vision; Ghost UI auto-dims icons during cruising
 - **Music Hub & Audio Node (Premium):** Fluid in-ride media controls directly over navigation
-- **Vindly AI (Premium):** Spoken message summaries with DPN-1 voice/tap confirmation in a Zero Data Retention model
+- **Vindly AI (Premium):** Spoken message summaries with hands-free voice/tap confirmation in a Zero Data Retention model
 - **Focus Lock & Smart Hide (Free/Premium):** System DND session control; quick HUD toggle and auto-hiding in Premium
 - **Full Interface Control (Premium):** Fixed 56 dpi in Free; fluid icon sizing slider, custom palettes, and Premium Gold (`#F59E0B`) in Premium
-- Ultra-readable on motorcycle mounts (vibration, rain, gloves)
+- Balanced for both car drivers and motorcyclists (vibration, rain, gloves)
 
 ## Technical basis
 
 - Android 10+ (SDK API 29–36)
 - AccessibilityService — detect screen changes and restore navigation
 - Notification listener — in-ride alerts and message summaries
-- Microphone (`RECORD_AUDIO`) — ephemeral DPN-1 voice confirmation ("Yes/No")
+- Microphone (`RECORD_AUDIO`) — ephemeral voice confirmation ("Yes/No")
 - Privacy & Reliability — on-device state engine with Google Firebase (Crashlytics + GA4 `prod`) stability diagnostics; Zero Data Retention for AI summaries
 
 ## Pricing & Trial

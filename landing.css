@@ -458,7 +458,164 @@ a.btn-play.disabled:hover {
     border-radius: 10px;
 }
 
-/* Field proof — unified tabs + lightbox */
+/* --- How Smart HUD Works on the Road --- */
+.hud-in-action {
+    background-color: var(--midnight-navy);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    padding: var(--section-y) clamp(22px, 5vw, 48px);
+}
+
+.hud-action-inner {
+    max-width: var(--content-max);
+    margin: 0 auto;
+}
+
+.hud-action-header {
+    text-align: center;
+    max-width: 760px;
+    margin: 0 auto clamp(32px, 4vw, 56px);
+}
+
+.hud-action-title {
+    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    letter-spacing: 0.12em;
+    margin: 0 0 1rem;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.hud-action-lead {
+    font-size: 1.05rem;
+    color: var(--slate-400);
+    margin: 0;
+    line-height: 1.55;
+    font-family: 'Inter', sans-serif;
+}
+
+.hud-action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: clamp(16px, 2vw, 24px);
+}
+
+.hud-action-card {
+    display: flex;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(100, 116, 139, 0.18);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.hud-action-card:hover {
+    border-color: rgba(0, 229, 255, 0.35);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.4);
+}
+
+.hud-action-media {
+    background: #080d19;
+    padding: 14px 14px 0;
+    display: flex;
+    justify-content: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.hud-lightbox-trigger {
+    background: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    cursor: zoom-in;
+    display: block;
+    width: 100%;
+    max-width: 240px;
+    aspect-ratio: 1080 / 2250;
+    overflow: hidden;
+    border-radius: 6px;
+    position: relative;
+    transition: transform 0.2s ease;
+}
+
+.hud-lightbox-trigger:hover {
+    transform: scale(1.02);
+}
+
+.hud-lightbox-trigger img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top center;
+    display: block;
+    border-radius: 6px;
+}
+
+.hud-action-content {
+    padding: 1.25rem 1.25rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.hud-action-meta {
+    margin-bottom: 0.75rem;
+}
+
+.hud-action-card h3 {
+    font-size: 1.05rem;
+    letter-spacing: 1px;
+    margin: 0 0 0.6rem;
+    color: var(--white);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.25;
+}
+
+.hud-action-card p {
+    font-size: 0.88rem;
+    color: var(--slate-400);
+    margin: 0;
+    line-height: 1.55;
+    font-family: 'Inter', sans-serif;
+}
+
+.hud-action-card strong {
+    color: var(--white);
+}
+
+.hud-action-card code {
+    font-family: monospace;
+    font-size: 0.95em;
+    background: rgba(0, 229, 255, 0.1);
+    color: var(--velocity-cyan);
+    padding: 2px 6px;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 229, 255, 0.2);
+}
+
+@media (max-width: 1024px) {
+    .hud-action-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .hud-lightbox-trigger {
+        max-width: 260px;
+    }
+}
+
+@media (max-width: 580px) {
+    .hud-action-grid {
+        grid-template-columns: 1fr;
+    }
+    .hud-lightbox-trigger {
+        max-width: 280px;
+    }
+}
+
+/* --- Field proof — Car + Moto 50/50 balance + lightbox --- */
 .field-proof {
     background-color: var(--midnight-navy);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -474,44 +631,114 @@ a.btn-play.disabled:hover {
 
 .field-proof .compliance-shield-title {
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 0.75rem;
 }
 
-/* --- Field proof tabs --- */
-.proof-tabs-nav {
+.proof-subtitle {
+    margin: 0 auto clamp(24px, 3vw, 40px);
+    font-size: 1.05rem;
+    color: var(--slate-400);
+    max-width: 650px;
+    line-height: 1.5;
+}
+
+.proof-dual-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: clamp(24px, 3.5vw, 40px);
+    max-width: var(--content-max);
+    margin: 0 auto;
+    text-align: left;
+}
+
+.proof-card {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(100, 116, 139, 0.18);
+    border-radius: 8px;
+    padding: clamp(16px, 2vw, 24px);
+    transition: border-color 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.proof-card:hover {
+    border-color: rgba(0, 229, 255, 0.35);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.proof-card-header {
+    display: flex;
     align-items: center;
-    gap: 1.5rem;
-    margin-bottom: 3rem;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+}
+
+.proof-vehicle-badge {
     font-family: 'Barlow Condensed', sans-serif;
-}
-
-.tab-btn {
-    background: transparent;
-    border: none;
-    color: var(--steel-gray);
-    font-size: 1.2rem;
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    cursor: pointer;
-    transition: color 0.3s ease, border-color 0.3s ease;
-    padding: 0.5rem 0;
-    border-bottom: 2px solid transparent;
-}
-
-.tab-btn:hover,
-.tab-btn.active {
     color: var(--velocity-cyan);
+    background: rgba(0, 229, 255, 0.1);
+    border: 1px solid rgba(0, 229, 255, 0.3);
+    padding: 4px 10px;
+    border-radius: 2px;
 }
 
-.tab-btn.active {
-    border-bottom: 2px solid var(--velocity-cyan);
+.proof-card .lightbox-trigger {
+    width: 100%;
+    max-width: 100%;
+    aspect-ratio: 3 / 2;
+    margin: 0 0 1.25rem 0;
+    position: relative;
+    background: transparent;
+    border: 1px solid rgba(0, 229, 255, 0.1);
+    padding: 0;
+    cursor: zoom-in;
+    display: block;
+    overflow: hidden;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.tab-divider {
-    color: rgba(255, 255, 255, 0.1);
-    font-size: 1.2rem;
+.proof-card .lightbox-trigger:hover {
+    transform: scale(1.01);
+    box-shadow: 0 10px 30px rgba(0, 229, 255, 0.08);
+}
+
+.proof-card .proof-image {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    border: none;
+    border-radius: 0;
+}
+
+.proof-card .proof-caption {
+    margin: 0;
+    padding: 0;
+    font-size: 0.92rem;
+    color: var(--slate-400);
+    line-height: 1.55;
+    font-family: 'Inter', sans-serif;
+    text-align: left;
+}
+
+@media (max-width: 768px) {
+    .proof-dual-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Backward compatibility for tab selectors if needed */
+.proof-tabs-nav {
+    display: none;
 }
 
 .tab-panel {
@@ -519,10 +746,7 @@ a.btn-play.disabled:hover {
 }
 
 .tab-panel.active {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    animation: fieldProofFadeIn 0.5s ease;
+    display: block;
 }
 
 .lightbox-trigger {
@@ -685,22 +909,38 @@ body.lightbox-open {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 32px;
-    height: 32px;
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    min-height: 48px;
+    border-radius: 12px;
+    background: rgba(0, 229, 255, 0.08);
+    border: 1px solid rgba(0, 229, 255, 0.16);
     color: var(--velocity-cyan);
+    flex-shrink: 0;
 }
 
 .feature-item--premium .feature-icon-box {
+    background: rgba(245, 158, 11, 0.1);
+    border-color: rgba(245, 158, 11, 0.22);
     color: var(--premium-gold);
 }
 
 .feature-item--mixed .feature-icon-box {
+    background: rgba(56, 189, 248, 0.08);
+    border-color: rgba(56, 189, 248, 0.2);
     color: #38BDF8;
 }
 
+.feature-icon-box svg,
+.feature-item svg,
 .feature-icon {
     width: 24px;
     height: 24px;
+    max-width: 24px;
+    max-height: 24px;
+    display: block;
+    flex-shrink: 0;
 }
 
 .feature-badge {
